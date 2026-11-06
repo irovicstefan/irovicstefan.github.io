@@ -1,5 +1,6 @@
 // Raspored sedenja — izmenite imena ovde; stranica index.html se sama ažurira.
 // Mladenački sto se prikazuje zasebno i ne ulazi u ukupan broj gostiju.
+// Zakomentarisana imena (//) se ne prikazuju i ne računaju.
 window.RASPORED = {
   "mladenacki": [
     "Tanja Petrović",
@@ -8,7 +9,7 @@ window.RASPORED = {
     "Mila Grujić",
     "Jelena Jovanović",
     "Marvin Talon"
-    // "Filip Grujić",
+    // "Filip Grujić"
     // "Petra Talon"
   ],
   "stolovi": [
@@ -64,13 +65,13 @@ window.RASPORED = {
       "gosti": [
         "Milica Jelić",
         "Ivan Jelić",
-        // "Dunja Jelić",
+        // "Dunja Jelić"
         "Nenad Tošić",
         "Sofija Tošić",
         "Maja Marinković",
         "Miloš Marinković",
         "Jelena Bajović",
-        "Jeka muz",
+        "Cihan Çimen",
         "Dragana Radišić"
       ]
     },
@@ -107,14 +108,14 @@ window.RASPORED = {
       "gosti": [
         "Ljuba Vesić",
         "Dragica Vesić",
-        "Dusica Tetka",
-        "Žarko Teca",
-        "Anđelka dete",
+        "Dušica Stojanović",
+        "Žarko Stojanović",
+        "Anđelka Stojanović",
         "Vladimir Stojanović",
         "Fea Stojanović",
         "Gordana Stojanović",
-        "Milovan Radovanović",
-        "Rastko Radovanović",
+        "Milovan Radovančević",
+        "Rastko Radovančević",
         "Željko Žujović",
         "Ivana Žujović"
       ]
@@ -124,12 +125,12 @@ window.RASPORED = {
       "gosti": [
         "Željko Ljubičić",
         "Božana Divac",
-        "Tomanija Mihajlović",
-        "Goca Mihajlović",
-        "Miki Mihajlović",
+        "Tomanija Mihailović",
+        "Goca Mihailović",
+        "Miki Mihailović",
         "Saša Stanković",
         "Ivana Stanković",
-        "Snežana",
+        "Snežana Mijailović",
         "Petrija Petrović",
         "Stoja Ostojić",
         "Mirko Lunić",
@@ -139,17 +140,17 @@ window.RASPORED = {
     {
       "broj": 9,
       "gosti": [
-        "Mila Zivković",
-        "Sinisa Štetić",
+        "Mila Živković",
+        "Siniša Štetić",
         "Lena Štetić",
-        "Branislav Cetenović",
+        "Branislav Ćetenović",
         "Dragan Milanović",
         "Dragica Milanović",
-        "Saša Lazarevac",
-        "Danijela Lazarevac",
+        "Saša Ivanović",
+        "Danijela Ivanović",
         "Zorica Milovanović",
         "Dejan Milovanović",
-        "Dejanova Zena",
+        "Dragana Milovanović",
         "Darko Milovanović"
       ]
     },
@@ -163,7 +164,7 @@ window.RASPORED = {
         "Gordana Vasiljević",
         "Viktor Vasiljević",
         "Sara Vasiljević",
-        "Sveta",
+        "Sveta Dobričić",
         "Zoran Spasojević",
         "Aca Spasojević",
         "Bojan Spasojević",
@@ -174,14 +175,14 @@ window.RASPORED = {
       "broj": 11,
       "gosti": [
         "Dule Mirković",
-        "Pera Vukšanović",
-        "Slavica Vukšanović",
+        "Pera Vuksanović",
+        "Slavica Vuksanović",
         "Rajko Petrović",
         "Gordana Petrović",
-        "Milos Lazić",
+        "Marina Lazić",
         "Ivan Lazić",
-        "Dule Ilić",
-        "Dule Ilic Zena",
+        "Luka Ilić",
+        "Jana Ilić",
         "Miško Marković",
         "Sneža Marković"
       ]
@@ -194,13 +195,13 @@ window.RASPORED = {
         "Milijana Radovanović",
         "Tanja Radovanović",
         "Natalija Radovanović",
-        "Zorica",
-        "Nesa",
-        "Vesna",
-        "Bojana",
-        "Sanja",
-        "Milos",
-        "Slađana Jovanović"
+        "Zorica Krčmarević",
+        "Neša Krčmarević",
+        "Vesna Milosavljević",
+        "Bojan/Bojana Milosavljević",
+        "Sanja Jovičić",
+        "Miloš Jovičić",
+        "Slađa Jovanović"
       ]
     },
     {
@@ -223,7 +224,7 @@ window.RASPORED = {
     {
       "broj": 14,
       "gosti": [
-        "Nikica Strizak",
+        "Nikica Strižak",
         "Jelena Kuzmanović",
         "Nikola Šešić",
         "Željko Tešić",
@@ -231,16 +232,14 @@ window.RASPORED = {
         "Jovana Deljanin",
         "Marija Dušić",
         "Miljana Vida",
-        "Gabor Vida",
-        "Isidora Starčević",
-        "Sebastijan"
+        "Gabor Vida"
       ]
     },
     {
       "broj": 15,
       "gosti": [
-        "Pasquale Malgieri",
-        "Consiglia Dileo",
+        "Pasquale/Paskvale Malgieri",
+        "Consiglia/Konsilja Dileo",
         "Andrea Polinelli",
         "Anna Sikorska Polinelli",
         "Filip Ljubisavljević",
@@ -248,8 +247,7 @@ window.RASPORED = {
         "Minja Stefanović",
         "Miloš Popović",
         "Danijela Đorović",
-        "Miša Đorović",
-        "Tamara Đokić"
+        "Miša Đorović"
       ]
     },
     {
@@ -259,11 +257,13 @@ window.RASPORED = {
         "Natalija Fijol",
         "Karolina Janus",
         "Paulina Krupska",
-        "Laura Ljido",
+        "Laura Đido",
         "Jordanka Cigan",
         "Lujza Urbancova",
-        "Marijana Rosčić",
-        "Kasija Anzejevksa"
+        "Marijana Roščić",
+        "Kasja Andžejevska",
+        "Isidora Starčević",
+        "Sebastijan Komorovski"
       ]
     }
   ]

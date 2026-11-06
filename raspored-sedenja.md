@@ -1,6 +1,6 @@
 # Raspored sedenja
 
-**Ukupno gostiju:** 173 · **Stolova:** 16
+**Ukupno gostiju:** 172 · **Stolova:** 16
 
 *+ [Mladenački sto](#mladenački-sto) (zaseban, 6 osoba, ne ulazi u ukupan broj)*
 
@@ -21,10 +21,10 @@
 | [Sto 11](#sto-11) | 11 |
 | [Sto 12](#sto-12) | 12 |
 | [Sto 13](#sto-13) | 12 |
-| [Sto 14](#sto-14) | 11 |
-| [Sto 15](#sto-15) | 11 |
-| [Sto 16](#sto-16) | 9 |
-| **Ukupno** | **173** |
+| [Sto 14](#sto-14) | 9 |
+| [Sto 15](#sto-15) | 10 |
+| [Sto 16](#sto-16) | 11 |
+| **Ukupno** | **172** |
 
 ---
 
@@ -111,7 +111,7 @@
 | 5 | Maja Marinković |
 | 6 | Miloš Marinković |
 | 7 | Jelena Bajović |
-| 8 | Jeka muz |
+| 8 | Cihan Çimen |
 | 9 | Dragana Radišić |
 
 ## Sto 5
@@ -154,14 +154,14 @@
 |---:|---|
 | 1 | Ljuba Vesić |
 | 2 | Dragica Vesić |
-| 3 | Dusica Tetka |
-| 4 | Žarko Teca |
-| 5 | Anđelka dete |
+| 3 | Dušica Stojanović |
+| 4 | Žarko Stojanović |
+| 5 | Anđelka Stojanović |
 | 6 | Vladimir Stojanović |
 | 7 | Fea Stojanović |
 | 8 | Gordana Stojanović |
-| 9 | Milovan Radovanović |
-| 10 | Rastko Radovanović |
+| 9 | Milovan Radovančević |
+| 10 | Rastko Radovančević |
 | 11 | Željko Žujović |
 | 12 | Ivana Žujović |
 
@@ -173,12 +173,12 @@
 |---:|---|
 | 1 | Željko Ljubičić |
 | 2 | Božana Divac |
-| 3 | Tomanija Mihajlović |
-| 4 | Goca Mihajlović |
-| 5 | Miki Mihajlović |
+| 3 | Tomanija Mihailović |
+| 4 | Goca Mihailović |
+| 5 | Miki Mihailović |
 | 6 | Saša Stanković |
 | 7 | Ivana Stanković |
-| 8 | Snežana |
+| 8 | Snežana Mijailović |
 | 9 | Petrija Petrović |
 | 10 | Stoja Ostojić |
 | 11 | Mirko Lunić |
@@ -190,17 +190,17 @@
 
 | # | Ime i prezime |
 |---:|---|
-| 1 | Mila Zivković |
-| 2 | Sinisa Štetić |
+| 1 | Mila Živković |
+| 2 | Siniša Štetić |
 | 3 | Lena Štetić |
-| 4 | Branislav Cetenović |
+| 4 | Branislav Ćetenović |
 | 5 | Dragan Milanović |
 | 6 | Dragica Milanović |
-| 7 | Saša Lazarevac |
-| 8 | Danijela Lazarevac |
+| 7 | Saša Ivanović |
+| 8 | Danijela Ivanović |
 | 9 | Zorica Milovanović |
 | 10 | Dejan Milovanović |
-| 11 | Dejanova Zena |
+| 11 | Dragana Milovanović |
 | 12 | Darko Milovanović |
 
 ## Sto 10
@@ -216,7 +216,7 @@
 | 5 | Gordana Vasiljević |
 | 6 | Viktor Vasiljević |
 | 7 | Sara Vasiljević |
-| 8 | Sveta |
+| 8 | Sveta Dobričić |
 | 9 | Zoran Spasojević |
 | 10 | Aca Spasojević |
 | 11 | Bojan Spasojević |
@@ -229,14 +229,14 @@
 | # | Ime i prezime |
 |---:|---|
 | 1 | Dule Mirković |
-| 2 | Pera Vukšanović |
-| 3 | Slavica Vukšanović |
+| 2 | Pera Vuksanović |
+| 3 | Slavica Vuksanović |
 | 4 | Rajko Petrović |
 | 5 | Gordana Petrović |
-| 6 | Milos Lazić |
+| 6 | Marina Lazić |
 | 7 | Ivan Lazić |
-| 8 | Dule Ilić |
-| 9 | Dule Ilic Zena |
+| 8 | Luka Ilić |
+| 9 | Jana Ilić |
 | 10 | Miško Marković |
 | 11 | Sneža Marković |
 
@@ -251,13 +251,13 @@
 | 3 | Milijana Radovanović |
 | 4 | Tanja Radovanović |
 | 5 | Natalija Radovanović |
-| 6 | Zorica |
-| 7 | Nesa |
-| 8 | Vesna |
-| 9 | Bojana |
-| 10 | Sanja |
-| 11 | Milos |
-| 12 | Slađana Jovanović |
+| 6 | Zorica Krčmarević |
+| 7 | Neša Krčmarević |
+| 8 | Vesna Milosavljević |
+| 9 | Bojan/Bojana Milosavljević |
+| 10 | Sanja Jovičić |
+| 11 | Miloš Jovičić |
+| 12 | Slađa Jovanović |
 
 ## Sto 13
 
@@ -280,11 +280,11 @@
 
 ## Sto 14
 
-*11 gostiju*
+*9 gostiju*
 
 | # | Ime i prezime |
 |---:|---|
-| 1 | Nikica Strizak |
+| 1 | Nikica Strižak |
 | 2 | Jelena Kuzmanović |
 | 3 | Nikola Šešić |
 | 4 | Željko Tešić |
@@ -293,17 +293,15 @@
 | 7 | Marija Dušić |
 | 8 | Miljana Vida |
 | 9 | Gabor Vida |
-| 10 | Isidora Starčević |
-| 11 | Sebastijan |
 
 ## Sto 15
 
-*11 gostiju*
+*10 gostiju*
 
 | # | Ime i prezime |
 |---:|---|
-| 1 | Pasquale Malgieri |
-| 2 | Consiglia Dileo |
+| 1 | Pasquale/Paskvale Malgieri |
+| 2 | Consiglia/Konsilja Dileo |
 | 3 | Andrea Polinelli |
 | 4 | Anna Sikorska Polinelli |
 | 5 | Filip Ljubisavljević |
@@ -312,11 +310,10 @@
 | 8 | Miloš Popović |
 | 9 | Danijela Đorović |
 | 10 | Miša Đorović |
-| 11 | Tamara Đokić |
 
 ## Sto 16
 
-*9 gostiju*
+*11 gostiju*
 
 | # | Ime i prezime |
 |---:|---|
@@ -324,8 +321,10 @@
 | 2 | Natalija Fijol |
 | 3 | Karolina Janus |
 | 4 | Paulina Krupska |
-| 5 | Laura Ljido |
+| 5 | Laura Đido |
 | 6 | Jordanka Cigan |
 | 7 | Lujza Urbancova |
-| 8 | Marijana Rosčić |
-| 9 | Kasija Anzejevksa |
+| 8 | Marijana Roščić |
+| 9 | Kasja Andžejevska |
+| 10 | Isidora Starčević |
+| 11 | Sebastijan Komorovski |
