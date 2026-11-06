@@ -56,7 +56,7 @@ window.RASPORED = {
         "Marko Balabanović",
         "Guli Andjela",
         "Borko Rančić",
-        "Borko Zena"
+        "Sara Danilović"
       ]
     },
     {
@@ -99,7 +99,7 @@ window.RASPORED = {
         "Ognjen Knežević",
         "Andria Mićunović",
         "Nemanja Janjić",
-        "Janjic + 1"
+        "Sanja Vujčić"
       ]
     },
     {

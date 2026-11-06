@@ -95,7 +95,7 @@
 | 8 | Marko Balabanović |
 | 9 | Guli Andjela |
 | 10 | Borko Rančić |
-| 11 | Borko Zena |
+| 11 | Sara Danilović |
 
 ## Sto 4
 
@@ -144,7 +144,7 @@
 | 6 | Ognjen Knežević |
 | 7 | Andria Mićunović |
 | 8 | Nemanja Janjić |
-| 9 | Janjic + 1 |
+| 9 | Sanja Vujčić |
 
 ## Sto 7
 
