@@ -54,7 +54,7 @@ window.RASPORED = {
         "Srđan Miladinović",
         "Sara Miladinović",
         "Marko Balabanović",
-        "Guli Andjela",
+        "Anđela Novaković",
         "Borko Rančić",
         "Sara Danilović"
       ]

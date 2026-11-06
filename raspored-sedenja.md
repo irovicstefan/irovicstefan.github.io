@@ -93,7 +93,7 @@
 | 6 | Srđan Miladinović |
 | 7 | Sara Miladinović |
 | 8 | Marko Balabanović |
-| 9 | Guli Andjela |
+| 9 | Anđela Novaković |
 | 10 | Borko Rančić |
 | 11 | Sara Danilović |
 
