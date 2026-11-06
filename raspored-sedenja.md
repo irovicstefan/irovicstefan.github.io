@@ -38,10 +38,10 @@
 | 2 | Stefan Irović |
 | 3 | Nikola Grujić |
 | 4 | Mila Grujić |
-| 5 | Filip Grujić |
+<!-- | 5 | Filip Grujić | -->
 | 6 | Jelena Jovanović |
 | 7 | Marvin Talon |
-| 8 | Petra Talon |
+<!-- | 8 | Petra Talon | -->
 
 
 ## Sto 1
@@ -105,7 +105,7 @@
 |---:|---|
 | 1 | Milica Jelić |
 | 2 | Ivan Jelić |
-| 3 | Dunja Jelić |
+<!-- | 3 | Dunja Jelić | -->
 | 4 | Nenad Tošić |
 | 5 | Sofija Tošić |
 | 6 | Maja Marinković |

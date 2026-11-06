@@ -6,10 +6,10 @@ window.RASPORED = {
     "Stefan Irović",
     "Nikola Grujić",
     "Mila Grujić",
-    "Filip Grujić",
+    // "Filip Grujić",
     "Jelena Jovanović",
     "Marvin Talon",
-    "Petra Talon"
+    // "Petra Talon"
   ],
   "stolovi": [
     {
@@ -64,7 +64,7 @@ window.RASPORED = {
       "gosti": [
         "Milica Jelić",
         "Ivan Jelić",
-        "Dunja Jelić",
+        // "Dunja Jelić",
         "Nenad Tošić",
         "Sofija Tošić",
         "Maja Marinković",
