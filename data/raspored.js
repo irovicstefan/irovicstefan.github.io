@@ -39,7 +39,7 @@ window.RASPORED = {
         "Dejan Novaković",
         "Dragana Novaković",
         "Nikola Novaković",
-        "Nikola devojka",
+        "Anabela Palfi",
         "Marko Novaković"
       ]
     },
@@ -80,7 +80,7 @@ window.RASPORED = {
         "Dimitrije Dimitrijević",
         "Milica Džodić Bursać",
         "Jelena Šljivančanin",
-        "Dusan Prokić",
+        "Dušan Prokić",
         "Dalibor Vidović",
         "Ivana Antić",
         "Nikola Miličević",
@@ -91,7 +91,7 @@ window.RASPORED = {
     {
       "broj": 6,
       "gosti": [
-        "Sinisa Komlen",
+        "Siniša Komlen",
         "Jelica Komlen",
         "Nikola Čalija",
         "Andrijana Stanić",
@@ -182,7 +182,7 @@ window.RASPORED = {
         "Ivan Lazić",
         "Dule Ilić",
         "Dule Ilic Zena",
-        "Misko Marković",
+        "Miško Marković",
         "Sneža Marković"
       ]
     },
@@ -224,8 +224,8 @@ window.RASPORED = {
       "broj": 14,
       "gosti": [
         "Nikica Strizak",
-        "Jelena Kuznanović",
-        "Nikola Šesić",
+        "Jelena Kuzmanović",
+        "Nikola Šešić",
         "Željko Tešić",
         "Ivana Vasiljević",
         "Jovana Deljanin",
@@ -246,7 +246,7 @@ window.RASPORED = {
         "Filip Ljubisavljević",
         "Sandra Vidić",
         "Minja Stefanović",
-        "Milos Popović",
+        "Miloš Popović",
         "Danijela Đorović",
         "Miša Đorović",
         "Tamara Đokić"

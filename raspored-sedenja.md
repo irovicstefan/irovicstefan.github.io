@@ -76,7 +76,7 @@
 | 7 | Dejan Novaković |
 | 8 | Dragana Novaković |
 | 9 | Nikola Novaković |
-| 10 | Nikola devojka |
+| 10 | Anabela Palfi |
 | 11 | Marko Novaković |
 
 ## Sto 3
@@ -136,7 +136,7 @@
 
 | # | Ime i prezime |
 |---:|---|
-| 1 | Sinisa Komlen |
+| 1 | Siniša Komlen |
 | 2 | Jelica Komlen |
 | 3 | Nikola Čalija |
 | 4 | Andrijana Stanić |
@@ -237,7 +237,7 @@
 | 7 | Ivan Lazić |
 | 8 | Dule Ilić |
 | 9 | Dule Ilic Zena |
-| 10 | Misko Marković |
+| 10 | Miško Marković |
 | 11 | Sneža Marković |
 
 ## Sto 12
@@ -285,8 +285,8 @@
 | # | Ime i prezime |
 |---:|---|
 | 1 | Nikica Strizak |
-| 2 | Jelena Kuznanović |
-| 3 | Nikola Šesić |
+| 2 | Jelena Kuzmanović |
+| 3 | Nikola Šešić |
 | 4 | Željko Tešić |
 | 5 | Ivana Vasiljević |
 | 6 | Jovana Deljanin |
@@ -309,7 +309,7 @@
 | 5 | Filip Ljubisavljević |
 | 6 | Sandra Vidić |
 | 7 | Minja Stefanović |
-| 8 | Milos Popović |
+| 8 | Miloš Popović |
 | 9 | Danijela Đorović |
 | 10 | Miša Đorović |
 | 11 | Tamara Đokić |
