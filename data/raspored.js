@@ -1,4 +1,4 @@
-// Raspored sedenja — izmenite imena ovde; stranica raspored.html se sama ažurira.
+// Raspored sedenja — izmenite imena ovde; stranica index.html se sama ažurira.
 // Mladenački sto se prikazuje zasebno i ne ulazi u ukupan broj gostiju.
 window.RASPORED = {
   "mladenacki": [
@@ -6,9 +6,9 @@ window.RASPORED = {
     "Stefan Irović",
     "Nikola Grujić",
     "Mila Grujić",
-    // "Filip Grujić",
     "Jelena Jovanović",
-    "Marvin Talon",
+    "Marvin Talon"
+    // "Filip Grujić",
     // "Petra Talon"
   ],
   "stolovi": [
@@ -68,7 +68,7 @@ window.RASPORED = {
         "Nenad Tošić",
         "Sofija Tošić",
         "Maja Marinković",
-        "Čola Marinković",
+        "Miloš Marinković",
         "Jelena Bajović",
         "Jeka muz",
         "Dragana Radišić"

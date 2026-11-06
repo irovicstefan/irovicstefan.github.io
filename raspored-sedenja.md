@@ -1,8 +1,8 @@
 # Raspored sedenja
 
-**Ukupno gostiju:** 174 · **Stolova:** 16
+**Ukupno gostiju:** 173 · **Stolova:** 16
 
-*+ [Mladenački sto](#mladenački-sto) (zaseban, 8 osoba, ne ulazi u ukupan broj)*
+*+ [Mladenački sto](#mladenački-sto) (zaseban, 6 osoba, ne ulazi u ukupan broj)*
 
 ## Pregled
 
@@ -11,7 +11,7 @@
 | [Sto 1](#sto-1) | 10 |
 | [Sto 2](#sto-2) | 11 |
 | [Sto 3](#sto-3) | 11 |
-| [Sto 4](#sto-4) | 10 |
+| [Sto 4](#sto-4) | 9 |
 | [Sto 5](#sto-5) | 9 |
 | [Sto 6](#sto-6) | 9 |
 | [Sto 7](#sto-7) | 12 |
@@ -24,13 +24,13 @@
 | [Sto 14](#sto-14) | 11 |
 | [Sto 15](#sto-15) | 11 |
 | [Sto 16](#sto-16) | 9 |
-| **Ukupno** | **174** |
+| **Ukupno** | **173** |
 
 ---
 
 ## Mladenački sto
 
-*8 osoba · zaseban sto, ne ulazi u ukupan broj gostiju*
+*6 osoba · zaseban sto, ne ulazi u ukupan broj gostiju*
 
 | # | Ime i prezime |
 |---:|---|
@@ -38,9 +38,9 @@
 | 2 | Stefan Irović |
 | 3 | Nikola Grujić |
 | 4 | Mila Grujić |
-<!-- | 5 | Filip Grujić | -->
-| 6 | Jelena Jovanović |
-| 7 | Marvin Talon |
+| 5 | Jelena Jovanović |
+| 6 | Marvin Talon |
+<!-- | 7 | Filip Grujić | -->
 <!-- | 8 | Petra Talon | -->
 
 
@@ -99,20 +99,20 @@
 
 ## Sto 4
 
-*10 gostiju*
+*9 gostiju*
 
 | # | Ime i prezime |
 |---:|---|
 | 1 | Milica Jelić |
 | 2 | Ivan Jelić |
-<!-- | 3 | Dunja Jelić | -->
-| 4 | Nenad Tošić |
-| 5 | Sofija Tošić |
-| 6 | Maja Marinković |
-| 7 | Čola Marinković |
-| 8 | Jelena Bajović |
-| 9 | Jeka muz |
-| 10 | Dragana Radišić |
+<!-- | x | Dunja Jelić | -->
+| 3 | Nenad Tošić |
+| 4 | Sofija Tošić |
+| 5 | Maja Marinković |
+| 6 | Miloš Marinković |
+| 7 | Jelena Bajović |
+| 8 | Jeka muz |
+| 9 | Dragana Radišić |
 
 ## Sto 5
 
