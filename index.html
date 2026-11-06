@@ -455,16 +455,30 @@
     }
 
     // Vraća HTML imena sa <mark> oko pogođenih delova, ili null ako ne odgovara.
+    // Svaka ukucana reč mora biti POČETAK neke reči u imenu, i to svaka druge reči
+    // ("dragana ra" -> Dragana Radišić, ali ne i Dragana Novaković).
     function matchName(name, tokens) {
       var nm = normalizeWithMap(name);
-      var ranges = [];
-      for (var t = 0; t < tokens.length; t++) {
-        var idx = nm.text.indexOf(tokens[t]);
-        if (idx === -1) return null;
-        var start = nm.map[idx];
-        var end = nm.map[idx + tokens[t].length - 1] + 1;
-        ranges.push([start, end]);
+      var words = [], re = /[a-z0-9]+/g, m;
+      while ((m = re.exec(nm.text))) words.push({ start: m.index, text: m[0] });
+
+      var used = [], assign = [];
+      function solve(t) {
+        if (t === tokens.length) return true;
+        for (var w = 0; w < words.length; w++) {
+          if (used[w] || words[w].text.indexOf(tokens[t]) !== 0) continue;
+          used[w] = true; assign[t] = w;
+          if (solve(t + 1)) return true;
+          used[w] = false;
+        }
+        return false;
       }
+      if (!solve(0)) return null;
+
+      var ranges = tokens.map(function (tok, t) {
+        var s = words[assign[t]].start;
+        return [nm.map[s], nm.map[s + tok.length - 1] + 1];
+      });
       ranges.sort(function (a, b) { return a[0] - b[0]; });
       var merged = [];
       ranges.forEach(function (r) {
