@@ -123,7 +123,7 @@
 | 1 | Dimitrije Dimitrijević |
 | 2 | Milica Džodić Bursać |
 | 3 | Jelena Šljivančanin |
-| 4 | Dusan Prokić |
+| 4 | Dušan Prokić |
 | 5 | Dalibor Vidović |
 | 6 | Ivana Antić |
 | 7 | Nikola Miličević |
