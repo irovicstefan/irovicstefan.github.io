@@ -24,7 +24,7 @@ window.RASPORED = {
         "Miloš Milošanović",
         "Milena Milošanović",
         "Milan Bogojević",
-        "Andja Bogojević"
+        "Anđa Bogojević"
       ]
     },
     {
@@ -109,7 +109,7 @@ window.RASPORED = {
         "Dragica Vesić",
         "Dusica Tetka",
         "Žarko Teca",
-        "Andjelka dete",
+        "Anđelka dete",
         "Vladimir Stojanović",
         "Fea Stojanović",
         "Gordana Stojanović",
@@ -208,7 +208,7 @@ window.RASPORED = {
       "gosti": [
         "Sanja Lunić",
         "Milan Lunić",
-        "Anđela Djapić",
+        "Anđela Đapić",
         "Aleksandra Vuković",
         "Sonja Lukanović",
         "Boris Perić",

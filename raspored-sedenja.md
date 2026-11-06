@@ -59,7 +59,7 @@
 | 7 | Miloš Milošanović |
 | 8 | Milena Milošanović |
 | 9 | Milan Bogojević |
-| 10 | Andja Bogojević |
+| 10 | Anđa Bogojević |
 
 ## Sto 2
 
@@ -156,7 +156,7 @@
 | 2 | Dragica Vesić |
 | 3 | Dusica Tetka |
 | 4 | Žarko Teca |
-| 5 | Andjelka dete |
+| 5 | Anđelka dete |
 | 6 | Vladimir Stojanović |
 | 7 | Fea Stojanović |
 | 8 | Gordana Stojanović |
@@ -267,7 +267,7 @@
 |---:|---|
 | 1 | Sanja Lunić |
 | 2 | Milan Lunić |
-| 3 | Anđela Djapić |
+| 3 | Anđela Đapić |
 | 4 | Aleksandra Vuković |
 | 5 | Sonja Lukanović |
 | 6 | Boris Perić |
