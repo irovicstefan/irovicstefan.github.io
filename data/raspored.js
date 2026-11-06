@@ -85,7 +85,7 @@ window.RASPORED = {
         "Ivana Antić",
         "Nikola Miličević",
         "Zdravko Radmanović",
-        "Zena Radmanović"
+        "Sandra Radmanović"
       ]
     },
     {

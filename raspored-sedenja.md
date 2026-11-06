@@ -128,7 +128,7 @@
 | 6 | Ivana Antić |
 | 7 | Nikola Miličević |
 | 8 | Zdravko Radmanović |
-| 9 | Zena Radmanović |
+| 9 | Sandra Radmanović |
 
 ## Sto 6
 
