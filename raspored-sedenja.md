@@ -1,6 +1,6 @@
 # Raspored sedenja
 
-**Ukupno gostiju:** 172 · **Stolova:** 16
+**Ukupno gostiju:** 171 · **Stolova:** 16
 
 *+ [Mladenački sto](#mladenački-sto) (zaseban, 6 osoba, ne ulazi u ukupan broj)*
 
@@ -21,10 +21,10 @@
 | [Sto 11](#sto-11) | 11 |
 | [Sto 12](#sto-12) | 12 |
 | [Sto 13](#sto-13) | 12 |
-| [Sto 14](#sto-14) | 9 |
+| [Sto 14](#sto-14) | 8 |
 | [Sto 15](#sto-15) | 10 |
 | [Sto 16](#sto-16) | 11 |
-| **Ukupno** | **172** |
+| **Ukupno** | **171** |
 
 ---
 
@@ -280,19 +280,18 @@
 
 ## Sto 14
 
-*9 gostiju*
+*8 gostiju*
 
 | # | Ime i prezime |
 |---:|---|
 | 1 | Nikica Strižak |
-| 2 | Jelena Kuzmanović |
-| 3 | Nikola Šešić |
-| 4 | Željko Tešić |
-| 5 | Ivana Vasiljević |
-| 6 | Jovana Deljanin |
-| 7 | Marija Dušić |
-| 8 | Miljana Vida |
-| 9 | Gabor Vida |
+| 2 | Nikola Šešić |
+| 3 | Željko Tešić |
+| 4 | Ivana Vasiljević |
+| 5 | Jovana Deljanin |
+| 6 | Marija Dušić |
+| 7 | Miljana Vida |
+| 8 | Gabor Vida |
 
 ## Sto 15
 

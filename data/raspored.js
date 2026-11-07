@@ -225,7 +225,6 @@ window.RASPORED = {
       "broj": 14,
       "gosti": [
         "Nikica Strižak",
-        "Jelena Kuzmanović",
         "Nikola Šešić",
         "Željko Tešić",
         "Ivana Vasiljević",
