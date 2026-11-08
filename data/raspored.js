@@ -110,7 +110,6 @@ window.RASPORED = {
         "Dragica Vesić",
         "Dušica Stojanović",
         "Žarko Stojanović",
-        "Anđelka Stojanović",
         "Vladimir Stojanović",
         "Fea Stojanović",
         "Gordana Stojanović",

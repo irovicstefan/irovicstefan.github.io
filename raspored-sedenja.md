@@ -1,6 +1,6 @@
 # Raspored sedenja
 
-**Ukupno gostiju:** 171 · **Stolova:** 16
+**Ukupno gostiju:** 170 · **Stolova:** 16
 
 *+ [Mladenački sto](#mladenački-sto) (zaseban, 6 osoba, ne ulazi u ukupan broj)*
 
@@ -14,7 +14,7 @@
 | [Sto 4](#sto-4) | 9 |
 | [Sto 5](#sto-5) | 9 |
 | [Sto 6](#sto-6) | 9 |
-| [Sto 7](#sto-7) | 12 |
+| [Sto 7](#sto-7) | 11 |
 | [Sto 8](#sto-8) | 12 |
 | [Sto 9](#sto-9) | 12 |
 | [Sto 10](#sto-10) | 12 |
@@ -24,7 +24,7 @@
 | [Sto 14](#sto-14) | 8 |
 | [Sto 15](#sto-15) | 10 |
 | [Sto 16](#sto-16) | 11 |
-| **Ukupno** | **171** |
+| **Ukupno** | **170** |
 
 ---
 
@@ -148,7 +148,7 @@
 
 ## Sto 7
 
-*12 gostiju*
+*11 gostiju*
 
 | # | Ime i prezime |
 |---:|---|
@@ -156,14 +156,13 @@
 | 2 | Dragica Vesić |
 | 3 | Dušica Stojanović |
 | 4 | Žarko Stojanović |
-| 5 | Anđelka Stojanović |
-| 6 | Vladimir Stojanović |
-| 7 | Fea Stojanović |
-| 8 | Gordana Stojanović |
-| 9 | Milovan Radovančević |
-| 10 | Rastko Radovančević |
-| 11 | Željko Žujović |
-| 12 | Ivana Žujović |
+| 5 | Vladimir Stojanović |
+| 6 | Fea Stojanović |
+| 7 | Gordana Stojanović |
+| 8 | Milovan Radovančević |
+| 9 | Rastko Radovančević |
+| 10 | Željko Žujović |
+| 11 | Ivana Žujović |
 
 ## Sto 8
 
