@@ -152,6 +152,7 @@
       top: 0;
       z-index: 10;
       padding: 12px 0;
+      background: var(--bg);
       background: color-mix(in srgb, var(--bg) 88%, transparent);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
@@ -188,7 +189,8 @@
     }
     .search input::placeholder { color: var(--faint); }
     .search input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft), var(--shadow); }
-    .search input::-webkit-search-cancel-button { display: none; }
+    .search input::-webkit-search-cancel-button,
+    .search input::-webkit-search-decoration { -webkit-appearance: none; display: none; }
     .clear-btn {
       position: absolute;
       right: 8px;
@@ -212,8 +214,8 @@
       margin: 10px 0 0;
       font-size: 13px;
       color: var(--muted);
-      min-height: 20px;
     }
+    .status:empty { margin: 0; }
 
     /* Search results */
     .results {
@@ -313,17 +315,18 @@
       font-weight: 600;
       font-variant-numeric: lining-nums;
       text-anchor: middle;
-      dominant-baseline: central;
       pointer-events: none;
     }
     .m-mlad .m-top { fill: var(--accent-soft); }
     .m-mlad text { font-size: 54px; font-style: italic; font-weight: 500; }
-    .m-tbl:hover .m-top, .m-tbl:focus-visible .m-top { fill: var(--accent-soft); }
+    .m-tbl, .hit, .chip, .diet-row, .clear-btn, .theme-btn { -webkit-tap-highlight-color: transparent; }
+    .m-tbl:focus-visible .m-top { fill: var(--accent-soft); }
+    @media (hover: hover) { .m-tbl:hover .m-top { fill: var(--accent-soft); } }
     .m-tbl:focus-visible .m-top { stroke-width: 9; }
     .m-tbl.is-hit .m-top, .m-tbl.is-active .m-top { fill: var(--accent); }
     .m-tbl.is-hit text, .m-tbl.is-active text { fill: var(--accent-ink); }
     .m-tbl.is-hit .m-chair, .m-tbl.is-active .m-chair { fill: var(--accent); opacity: .45; }
-    .has-hits .m-tbl:not(.is-hit) { opacity: .35; }
+    .has-hits .m-tbl:not(.is-hit), .has-hits .m-extra { opacity: .35; }
     .m-static rect { fill: var(--surface-2); stroke: var(--faint); stroke-width: 3; }
     /* Posebna ishrana */
     .leaf { width: 12px; height: 12px; flex-shrink: 0; }
@@ -467,7 +470,7 @@
     .has-hits .m-pillars { opacity: .4; }
     .m-ico { fill: var(--accent); }
     .m-ico-cut { fill: var(--surface); }
-    .m-tbl:hover .m-ico-cut, .m-tbl:focus-visible .m-ico-cut { fill: var(--accent-soft); }
+    .m-tbl:focus-visible .m-ico-cut { fill: var(--accent-soft); }
     .m-tbl.is-hit .m-ico, .m-tbl.is-active .m-ico { fill: var(--accent-ink); }
     .m-tbl.is-hit .m-ico-cut, .m-tbl.is-active .m-ico-cut { fill: var(--accent); }
     .card-tag {
@@ -489,7 +492,6 @@
       font-weight: 600;
       letter-spacing: .14em;
       text-anchor: middle;
-      dominant-baseline: central;
     }
 
     /* Cards */
@@ -591,13 +593,22 @@
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
     @media (max-width: 560px) {
-      .hero { padding-top: 64px; }
-      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 60px 0 16px; }
+      h1 { font-size: 42px; }
+      .lede { margin-top: 8px; font-size: 15px; }
+      .ornament { margin-top: 12px; }
+      .theme-btn { top: 12px; }
+      .searchbar { padding: 10px 0; }
+      .search input { height: 52px; }
+      .sala { margin-top: 16px; padding: 12px 10px 12px; }
+      .is-searching .sala { margin-top: 0; }
+      .results { margin-bottom: 20px; }
+      .grid { grid-template-columns: 1fr; gap: 12px; }
+      .card { padding: 18px 16px 12px; }
       .hit-name { font-size: 17px; }
-      .sala { padding: 12px 10px; }
-      .m-tbl text { font-size: 104px; }
-      .m-mlad text { font-size: 66px; }
-      .m-static text { font-size: 72px; letter-spacing: .06em; }
+      .m-tbl text { font-size: 88px; }
+      .m-mlad text { font-size: 56px; }
+      .m-static text { font-size: 64px; letter-spacing: .08em; }
       .m-top { stroke-width: 6; }
     }
 
@@ -850,10 +861,20 @@
       if (parent) parent.appendChild(e);
       return e;
     }
-    function svgText(parent, x, y, lines, lineHeight) {
+    // Tekst centriran oko (x, y). Vertikalno centriranje preko dy u "em" jedinicama,
+    // jer Safari ne poštuje dominant-baseline (naročito na <tspan>).
+    var TEXT_DY = 0.35; // ≈ pola visine cifara/velikih slova
+    function svgText(parent, x, y, lines, lineHeightEm) {
       var t = svgEl('text', { x: x, y: y }, parent);
+      if (lines.length === 1) {
+        t.setAttribute('dy', TEXT_DY + 'em');
+        t.textContent = lines[0];
+        return t;
+      }
+      var lh = lineHeightEm || 1.1;
       lines.forEach(function (line, i) {
-        var ts = svgEl('tspan', { x: x, dy: i === 0 ? -(lines.length - 1) * lineHeight / 2 : lineHeight }, t);
+        var dy = i === 0 ? TEXT_DY - (lines.length - 1) * lh / 2 : lh;
+        var ts = svgEl('tspan', { x: x, dy: dy.toFixed(3) + 'em' }, t);
         ts.textContent = line;
       });
       return t;
@@ -930,7 +951,7 @@
         var gm = svgEl('g', { 'class': 'm-mlad' }, mapa);
         svgEl('rect', { 'class': 'm-hitarea', x: m.x - 20, y: m.y - 20, width: m.w + 40, height: m.h + 40 }, gm);
         svgEl('rect', { 'class': 'm-top', x: m.x, y: m.y, width: m.w, height: m.h, rx: 16 }, gm);
-        svgText(gm, m.x + m.w / 2, m.y + m.h / 2, ['Mladenački', 'sto'], 64);
+        svgText(gm, m.x + m.w / 2, m.y + m.h / 2, ['Mladenački', 'sto'], 1.05);
         makeClickable(gm, mladT, 'Mladenački sto');
       }
 
