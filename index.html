@@ -21,6 +21,15 @@
       --accent-ink: #ffffff;
       --accent-soft: #e6ebdf;
       --mark: #f1dea6;
+      --vegan: #3f7d38;
+      --vegan-soft: #e4efdd;
+      --vegan-chair: #5c9e4f;
+      --veg: #7a7414;
+      --veg-soft: #f2efd5;
+      --veg-chair: #c4b640;
+      --note: #9a6a2c;
+      --note-soft: #f5eadb;
+      --note-chair: #c99a5b;
       --shadow: 0 1px 2px rgba(39, 36, 31, .04), 0 4px 16px rgba(39, 36, 31, .05);
       --radius: 16px;
       --serif: 'Cormorant Garamond', Georgia, serif;
@@ -40,6 +49,15 @@
         --accent-ink: #141513;
         --accent-soft: #263023;
         --mark: #5d4c1c;
+        --vegan: #93cc84;
+        --vegan-soft: #24341f;
+        --vegan-chair: #7dbb6e;
+        --veg: #dcd277;
+        --veg-soft: #33311b;
+        --veg-chair: #cfc35a;
+        --note: #e0b27a;
+        --note-soft: #3a2e1f;
+        --note-chair: #c99a5b;
         --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
         color-scheme: dark;
       }
@@ -56,6 +74,15 @@
       --accent-ink: #141513;
       --accent-soft: #263023;
       --mark: #5d4c1c;
+      --vegan: #93cc84;
+      --vegan-soft: #24341f;
+      --vegan-chair: #7dbb6e;
+      --veg: #dcd277;
+      --veg-soft: #33311b;
+      --veg-chair: #cfc35a;
+      --note: #e0b27a;
+      --note-soft: #3a2e1f;
+      --note-chair: #c99a5b;
       --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
       color-scheme: dark;
     }
@@ -298,6 +325,141 @@
     .m-tbl.is-hit .m-chair, .m-tbl.is-active .m-chair { fill: var(--accent); opacity: .45; }
     .has-hits .m-tbl:not(.is-hit) { opacity: .35; }
     .m-static rect { fill: var(--surface-2); stroke: var(--faint); stroke-width: 3; }
+    /* Posebna ishrana */
+    .leaf { width: 12px; height: 12px; flex-shrink: 0; }
+    .diet {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      margin-left: auto;
+      padding: 2px 9px 2px 7px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      line-height: 1.5;
+      white-space: nowrap;
+      align-self: center;
+    }
+    .diet-vegan { background: var(--vegan-soft); color: var(--vegan); }
+    .diet-veg { background: var(--veg-soft); color: var(--veg); }
+    .diet-other { background: var(--note-soft); color: var(--note); }
+    .hit-sub .diet { margin-left: 6px; vertical-align: 1px; }
+    .card.mlad .names li .diet { margin-left: 8px; }
+    .card-diet {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: -2px 0 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .card-diet .leaf { color: var(--vegan); }
+
+    .tools { display: flex; justify-content: center; margin: 16px 0 0; }
+    .tools[hidden], .is-searching .tools, .is-searching .diet-panel { display: none; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 40px;
+      padding: 0 8px 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: border-color .15s, background .15s;
+    }
+    .chip .leaf { width: 15px; height: 15px; color: var(--vegan); }
+    .chip:hover { border-color: var(--vegan); }
+    .chip[aria-expanded="true"] { background: var(--vegan-soft); border-color: var(--vegan); color: var(--vegan); }
+    .chip-count {
+      min-width: 24px;
+      height: 24px;
+      padding: 0 7px;
+      border-radius: 999px;
+      background: var(--vegan);
+      color: var(--surface);
+      font-size: 12px;
+      font-weight: 600;
+      display: grid;
+      place-items: center;
+    }
+    .diet-panel {
+      max-width: 560px;
+      margin: 16px auto 8px;
+      scroll-margin-top: 110px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 8px;
+    }
+    .diet-panel[hidden] { display: none; }
+    .diet-panel-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 2px 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .diet-panel-head h2 { margin: 0; font-family: var(--serif); font-size: 26px; font-weight: 500; white-space: nowrap; }
+    .diet-panel-head span { font-size: 12px; color: var(--muted); }
+    .diet-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      width: 100%;
+      padding: 12px 4px;
+      border: 0;
+      border-bottom: 1px dashed var(--line);
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    .diet-row:last-child { border-bottom: 0; }
+    .diet-row:hover { background: var(--surface-2); }
+    .diet-tbl {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: grid;
+      place-content: center;
+      text-align: center;
+      line-height: 1;
+    }
+    .diet-tbl small { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .diet-tbl b { font-family: var(--serif); font-size: 24px; font-weight: 600; font-variant-numeric: lining-nums; margin-top: 2px; }
+    .diet-list { list-style: none; margin: 0; padding: 2px 0 0; flex: 1; min-width: 0; }
+    .diet-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; padding: 3px 0; font-size: 15px; }
+    .diet-list .diet { margin-left: 0; }
+
+    .sala-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 16px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .sala-legend[hidden] { display: none; }
+    .sala-legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .sala-legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+    .m-chair.c-vegan, .m-tbl.is-hit .m-chair.c-vegan, .m-tbl.is-active .m-chair.c-vegan { fill: var(--vegan-chair); opacity: 1; }
+    .m-chair.c-veg, .m-tbl.is-hit .m-chair.c-veg, .m-tbl.is-active .m-chair.c-veg { fill: var(--veg-chair); opacity: 1; }
+    .m-chair.c-other, .m-tbl.is-hit .m-chair.c-other, .m-tbl.is-active .m-chair.c-other { fill: var(--note-chair); opacity: 1; }
+
     .card-empty { margin: 8px 0 4px; font-size: 14px; color: var(--faint); font-style: italic; }
     .m-note { fill: var(--accent); }
     .m-pillar-ring { fill: none; stroke: var(--faint); stroke-width: 2.5; }
@@ -379,6 +541,9 @@
       padding-top: 2px;
     }
     .names li.dim { opacity: .35; }
+    /* ime se ne lomi zbog oznake ishrane — oznaka prelazi u novi red ako nema mesta */
+    .names li.has-diet { flex-wrap: wrap; row-gap: 2px; }
+    .names li.has-diet .nm { flex: 1 1 auto; min-width: 0; }
     .card.flash { border-color: var(--accent); animation: flash 1.6s ease-out; }
     @keyframes flash {
       0% { box-shadow: 0 0 0 0 var(--accent), var(--shadow); }
@@ -441,7 +606,8 @@
     }
 
     @media print {
-      .searchbar, .jump, .theme-btn, .results, .empty, .ornament { display: none !important; }
+      .searchbar, .jump, .theme-btn, .results, .empty, .ornament, .tools { display: none !important; }
+      .diet-panel { box-shadow: none; break-inside: avoid; }
       body { background: #fff; color: #000; }
       .card { box-shadow: none; break-inside: avoid; }
       .card[hidden] { display: block !important; }
@@ -489,8 +655,13 @@
         <span class="sala-hint" id="salaHint">Dodirnite sto za spisak gostiju</span>
       </div>
       <svg id="mapa" role="group" aria-label="Raspored stolova u sali"></svg>
+      <div class="sala-legend" id="salaLegend" hidden></div>
     </section>
     <section class="grid" id="grid"></section>
+    <div class="tools" id="tools" hidden>
+      <button class="chip" id="dietBtn" type="button" aria-expanded="false" aria-controls="dietPanel"></button>
+    </div>
+    <section class="diet-panel" id="dietPanel" hidden aria-label="Posebna ishrana"></section>
   </main>
 
   <footer class="wrap" id="footer"></footer>
@@ -581,13 +752,39 @@
     }
 
     // ---------- Model ----------
+    // Gost je "Ime" ili { ime: "Ime", napomena: "vegan" }
+    function splitGuests(list) {
+      var names = [], notes = [];
+      (list || []).forEach(function (g) {
+        if (typeof g === 'string') { names.push(g); notes.push(''); }
+        else { names.push(g.ime || ''); notes.push(g.napomena || ''); }
+      });
+      return { names: names, notes: notes };
+    }
+    // Posebna ishrana: vegan / vegetarijanac / ostalo (prikazuje se kako je upisano)
+    function dietOf(note) {
+      var n = normalize(note || '').trim();
+      if (!n) return null;
+      if (n.indexOf('vegan') === 0) return { key: 'vegan', label: 'Veganski' };
+      if (n.indexOf('vegetarij') === 0) return { key: 'veg', label: 'Vegetarijanski' };
+      return { key: 'other', label: note.charAt(0).toUpperCase() + note.slice(1) };
+    }
+    var LEAF = '<svg class="leaf" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M14 2C7.2 2 2.8 5.2 2.8 10.2c0 1.4.4 2.6 1.1 3.5 1.4-3.6 3.9-6 6.9-7.4-2.6 1.8-4.6 4.4-5.7 7.9.9.5 1.9.8 3 .8C12.4 15 14.5 10.1 14 2z"/></svg>';
+    function dietPill(d) { return '<span class="diet diet-' + d.key + '">' + LEAF + escapeHtml(d.label) + '</span>'; }
+
     var tables = [];
     if (DATA.mladenacki && DATA.mladenacki.length) {
-      tables.push({ id: 'mladenacki', mlad: true, title: 'Mladenački sto', guests: DATA.mladenacki });
+      var ml = splitGuests(DATA.mladenacki);
+      tables.push({ id: 'mladenacki', mlad: true, title: 'Mladenački sto', guests: ml.names, notes: ml.notes });
     }
     DATA.stolovi.forEach(function (s) {
       var oznaka = (window.SALA && window.SALA.oznake && window.SALA.oznake[s.broj]) || '';
-      tables.push({ id: 'sto-' + s.broj, broj: s.broj, title: 'Sto ' + s.broj, oznaka: oznaka, guests: s.gosti });
+      var sg = splitGuests(s.gosti);
+      tables.push({ id: 'sto-' + s.broj, broj: s.broj, title: 'Sto ' + s.broj, oznaka: oznaka, guests: sg.names, notes: sg.notes });
+    });
+    tables.forEach(function (t) {
+      t.diets = t.notes.map(dietOf);
+      t.dietCount = t.diets.filter(Boolean).length;
     });
     var regular = tables.filter(function (t) { return !t.mlad; });
     var totalGuests = regular.reduce(function (s, t) { return s + t.guests.length; }, 0);
@@ -597,6 +794,25 @@
       if (m10 === 1 && m100 !== 11) return 'gost';
       if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return 'gosta';
       return 'gostiju';
+    }
+    function tableWord(n) {
+      var m10 = n % 10, m100 = n % 100;
+      if (m10 === 1 && m100 !== 11) return 'sto';
+      if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return 'stola';
+      return 'stolova';
+    }
+    function dietRank(k) { return k === 'vegan' ? 0 : k === 'veg' ? 1 : 2; }
+    // "Veganski 2 · Vegetarijanski 1"
+    function dietSummary(list) {
+      var order = [], counts = {}, labels = {};
+      list.forEach(function (d) {
+        if (!d) return;
+        var k = d.key === 'other' ? 'o:' + d.label : d.key;
+        if (!counts[k]) { counts[k] = 0; labels[k] = d.label; order.push(k); }
+        counts[k]++;
+      });
+      order.sort(function (a, b) { return dietRank(a) - dietRank(b); });
+      return order.map(function (k) { return labels[k] + ' ' + counts[k]; }).join(' · ');
     }
 
     // ---------- Render ----------
@@ -612,8 +828,10 @@
           '<span class="card-count">' + t.guests.length + ' ' + guestWord(t.guests.length) + '</span>';
       card.innerHTML =
         '<header class="card-head">' + head + '</header>' +
+        (t.dietCount ? '<p class="card-diet">' + LEAF + escapeHtml(dietSummary(t.diets)) + '</p>' : '') +
         '<ol class="names">' + t.guests.map(function (g, i) {
-          return '<li><span class="seat">' + (i + 1) + '</span><span class="nm">' + escapeHtml(g) + '</span></li>';
+          return '<li' + (t.diets[i] ? ' class="has-diet"' : '') + '><span class="seat">' + (i + 1) + '</span><span class="nm">' + escapeHtml(g) + '</span>' +
+            (t.diets[i] ? dietPill(t.diets[i]) : '') + '</li>';
         }).join('') + '</ol>' +
         (t.guests.length ? '' : '<p class="card-empty">Slobodan sto</p>');
       t.el = card;
@@ -652,10 +870,12 @@
       mapTables[t.id] = g;
     }
 
-    function drawRound(g, x, y, chairs) {
+    // diets (opciono): niz po stolicama — stolica gosta sa posebnom ishranom dobija boju
+    function drawRound(g, x, y, chairs, diets) {
       for (var i = 0; i < chairs; i++) {
         var a = -Math.PI / 2 + 2 * Math.PI * i / chairs;
-        svgEl('circle', { 'class': 'm-chair', cx: (x + 88 * Math.cos(a)).toFixed(1), cy: (y + 88 * Math.sin(a)).toFixed(1), r: 12 }, g);
+        var d = diets && diets[i];
+        svgEl('circle', { 'class': 'm-chair' + (d ? ' c-' + d.key : ''), cx: (x + 88 * Math.cos(a)).toFixed(1), cy: (y + 88 * Math.sin(a)).toFixed(1), r: 12 }, g);
       }
       svgEl('circle', { 'class': 'm-top', cx: x, cy: y, r: 64 }, g);
     }
@@ -721,18 +941,33 @@
         var x = pos[0], y = pos[1], n = t.guests.length;
         var g = svgEl('g', {}, mapa);
         svgEl('circle', { 'class': 'm-hitarea', cx: x, cy: y, r: 108 }, g);
-        drawRound(g, x, y, n || 12); // prazan sto: crta se sa 12 stolica, kao na skici
+        drawRound(g, x, y, n || 12, t.diets); // prazan sto: crta se sa 12 stolica, kao na skici
         // Sto sa ikonom (npr. fotograf) umesto broja prikazuje ikonu u sredini
         if (SALA.ikone && SALA.ikone[t.broj] === 'foto') drawCamera(g, x, y);
         else svgText(g, x, y, [String(t.broj)], 0);
-        makeClickable(g, t, t.title + (t.oznaka ? ' (' + t.oznaka + ')' : '') + ', ' + n + ' ' + guestWord(n));
+        makeClickable(g, t, t.title + (t.oznaka ? ' (' + t.oznaka + ')' : '') + ', ' + n + ' ' + guestWord(n) +
+          (t.dietCount ? ', posebna ishrana: ' + dietSummary(t.diets) : ''));
       });
+
+      // Legenda boja stolica (samo ako neko ima posebnu ishranu)
+      var seen = {}, legend = [];
+      tables.forEach(function (t) { t.diets.forEach(function (d) {
+        if (d && !seen[d.key]) { seen[d.key] = 1; legend.push(d); }
+      }); });
+      legend.sort(function (a, b) { return dietRank(a.key) - dietRank(b.key); });
+      var COLORS = { vegan: 'var(--vegan-chair)', veg: 'var(--veg-chair)', other: 'var(--note-chair)' };
+      if (legend.length) {
+        $('salaLegend').innerHTML = legend.map(function (d) {
+          return '<span><i style="background:' + COLORS[d.key] + '"></i>' + (d.key === 'other' ? 'Ostale napomene' : escapeHtml(d.label)) + ' obrok</span>';
+        }).join('');
+        $('salaLegend').hidden = false;
+      }
     }
 
     function setMapActive(id) {
       for (var k in mapTables) mapTables[k].classList.toggle('is-active', k === id);
     }
-    function setMapHits(ids) {
+    function setMapHits(ids, hint) {
       var any = false;
       for (var k in mapTables) {
         var hit = !!ids[k];
@@ -740,7 +975,45 @@
         if (hit) any = true;
       }
       mapa.classList.toggle('has-hits', any);
-      $('salaHint').textContent = any ? 'Označeni su stolovi pronađenih gostiju' : 'Dodirnite sto za spisak gostiju';
+      $('salaHint').textContent = any ? (hint || 'Označeni su stolovi pronađenih gostiju') : 'Dodirnite sto za spisak gostiju';
+    }
+
+    // ---------- Posebna ishrana (za konobare) ----------
+    var dietTables = tables.filter(function (t) { return t.dietCount; });
+    var dietTotal = dietTables.reduce(function (s, t) { return s + t.dietCount; }, 0);
+    var dietBtn = $('dietBtn'), dietPanel = $('dietPanel');
+    var dietOpen = false;
+    if (dietTotal) {
+      dietBtn.innerHTML = LEAF + 'Posebna ishrana <span class="chip-count">' + dietTotal + '</span>';
+      $('tools').hidden = false;
+      dietPanel.innerHTML =
+        '<div class="diet-panel-head"><h2>Posebna ishrana</h2><span>' +
+          escapeHtml(dietSummary([].concat.apply([], dietTables.map(function (t) { return t.diets; })))) +
+          ' · ' + dietTables.length + ' ' + tableWord(dietTables.length) + '</span></div>' +
+        dietTables.map(function (t) {
+          var badge = t.mlad ? '<span class="diet-tbl"><small>Sto</small><b>★</b></span>'
+                             : '<span class="diet-tbl"><small>Sto</small><b>' + t.broj + '</b></span>';
+          var people = t.guests.map(function (g, i) {
+            return t.diets[i] ? '<li>' + escapeHtml(g) + dietPill(t.diets[i]) + '</li>' : '';
+          }).join('');
+          return '<button type="button" class="diet-row" data-id="' + t.id + '">' + badge +
+            '<ul class="diet-list">' + people + '</ul></button>';
+        }).join('');
+      Array.prototype.forEach.call(dietPanel.querySelectorAll('.diet-row'), function (row) {
+        row.addEventListener('click', function () { goTo(row.getAttribute('data-id'), { keepDiet: true }); });
+      });
+      dietBtn.addEventListener('click', function () {
+        setDiet(!dietOpen);
+        if (dietOpen) dietPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+    function setDiet(open) {
+      dietOpen = open && dietTotal > 0;
+      dietBtn.setAttribute('aria-expanded', String(dietOpen));
+      dietPanel.hidden = !dietOpen;
+      var ids = {};
+      if (dietOpen) dietTables.forEach(function (t) { ids[t.id] = true; });
+      setMapHits(ids, 'Označeni su stolovi sa posebnom ishranom');
     }
 
     var zauzeti = regular.filter(function (t) { return t.guests.length; }).length;
@@ -752,6 +1025,7 @@
       var t = tables.filter(function (x) { return x.id === id; })[0];
       if (!t) return;
       if (!(opts && opts.keepSearch) && input.value) clearSearch();
+      if (!(opts && opts.keepDiet) && dietOpen) setDiet(false);
       setMapActive(id);
       t.el.hidden = false;
       t.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -806,7 +1080,7 @@
           var html = matchName(t.guests[i], tokens);
           li.querySelector('.nm').innerHTML = html || escapeHtml(t.guests[i]);
           li.classList.toggle('dim', !html);
-          if (html) { any = true; hits.push({ table: t, html: html }); }
+          if (html) { any = true; hits.push({ table: t, html: html, idx: i }); }
         });
         t.el.hidden = !any;
       });
@@ -815,12 +1089,12 @@
       setMapHits(hitIds);
 
       results.innerHTML = hits.map(function (h, i) {
-        var t = h.table;
+        var t = h.table, d = t.diets[h.idx];
         var badge = t.mlad
           ? '<span class="hit-table mlad"><small>Sto</small><b>★</b></span>'
           : '<span class="hit-table"><small>Sto</small><b>' + t.broj + '</b></span>';
         return '<button type="button" class="hit" data-i="' + i + '">' +
-          '<span class="hit-name">' + h.html + '<span class="hit-sub">' + t.title + (t.oznaka ? ' · ' + escapeHtml(t.oznaka) : '') + '</span></span>' + badge +
+          '<span class="hit-name">' + h.html + '<span class="hit-sub">' + t.title + (t.oznaka ? ' · ' + escapeHtml(t.oznaka) : '') + (d ? dietPill(d) : '') + '</span></span>' + badge +
           '</button>';
       }).join('');
       Array.prototype.forEach.call(results.querySelectorAll('.hit'), function (btn) {
@@ -835,7 +1109,10 @@
         : '';
     }
 
-    input.addEventListener('input', runSearch);
+    input.addEventListener('input', function () {
+      if (dietOpen) setDiet(false);
+      runSearch();
+    });
     input.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') { clearSearch(); }
       if (e.key === 'Enter') {
@@ -851,6 +1128,10 @@
     // ---------- Početno stanje iz URL-a (?ime=… ili #sto-7) ----------
     var params = new URLSearchParams(location.search);
     if (params.get('ime')) { input.value = params.get('ime'); runSearch(); }
+    else if (params.get('prikaz') === 'ishrana') {
+      setDiet(true);
+      setTimeout(function () { dietPanel.scrollIntoView({ block: 'start' }); }, 50);
+    }
     else if (location.hash) {
       var id = decodeURIComponent(location.hash.slice(1));
       setTimeout(function () { goTo(id); }, 50);

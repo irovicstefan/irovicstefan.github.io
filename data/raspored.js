@@ -1,6 +1,7 @@
 // Raspored sedenja — NE MENJATI RUČNO: pravi se iz raspored-sedenja.md (python3 alati/sync.py).
 // Mladenački sto se prikazuje zasebno i ne ulazi u ukupan broj gostiju.
 // Zakomentarisana imena (//) se ne prikazuju i ne računaju.
+// Gost sa napomenom (npr. posebna ishrana): { "ime": "…", "napomena": "vegan" }
 window.RASPORED = {
   "mladenacki": [
     "Tanja Petrović",
@@ -86,7 +87,7 @@ window.RASPORED = {
         "Nikica Strižak",
         "Nikola Šešić",
         "Željko Tešić",
-        "Ivana Vasiljević", // vegetarijanac
+        { "ime": "Ivana Vasiljević", "napomena": "vegetarijanac" },
         "Jovana Deljanin",
         "Marija Dušić",
         "Miljana Vida",
@@ -98,9 +99,9 @@ window.RASPORED = {
       "gosti": [
         "Jan Boronj",
         "Natalija Fijol",
-        "Karolina Janus", // vegan
-        "Paulina Krupska", // vegan
-        "Laura Đido", // vegetarijanc
+        { "ime": "Karolina Janus", "napomena": "vegan" },
+        { "ime": "Paulina Krupska", "napomena": "vegan" },
+        { "ime": "Laura Đido", "napomena": "vegetarijanac" },
         "Jordanka Cigan",
         "Lujza Urbancova",
         "Marijana Roščić",
@@ -260,7 +261,7 @@ window.RASPORED = {
         "Dalibor Vidović",
         "Ivana Antić",
         "Nikola Miličević",
-        "Zdravko Radmanović", // vegetarijanac
+        { "ime": "Zdravko Radmanović", "napomena": "vegetarijanac" },
         "Sandra Radmanović"
       ]
     }

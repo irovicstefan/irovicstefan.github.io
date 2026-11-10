@@ -8,7 +8,7 @@ a, b = (f'Sto {int(x)}' for x in sys.argv[1:3])
 p = 'raspored-sedenja.md'
 s = open(p, encoding='utf-8').read()
 head, body = s.split('\n---\n', 1)
-row = re.compile(r'^(<!--\s*)?\|\s*[\dx]+\s*\|\s*(.+?)\s*\|\s*(-->)?\s*$')
+row = re.compile(r'^(<!--\s*)?\|\s*[\dx]+\s*\|\s*([^|]+?)\s*\|(?:\s*[^|]*?\s*\|)?\s*(-->)?\s*$')
 parts = re.split(r'(^## .*$)', body, flags=re.M)
 idx, rows = {}, {}
 for i in range(1, len(parts), 2):
@@ -18,7 +18,7 @@ for t in (a, b):
     if t not in idx: sys.exit(f'Nema stola "{t}" u {p}')
 for dst, src in ((a, b), (b, a)):
     lines = parts[idx[dst]].split('\n'); keep = [l for l in lines if not row.match(l)]
-    k = keep.index('|---:|---|')
+    k = next(i for i, l in enumerate(keep) if l.startswith('|---:|'))
     parts[idx[dst]] = '\n'.join(keep[:k + 1] + rows[src] + keep[k + 1:])
 open(p, 'w', encoding='utf-8').write(head + '\n---\n' + ''.join(parts))
 print(f'Zamenjeno: {a} <-> {b}')
