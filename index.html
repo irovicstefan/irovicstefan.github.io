@@ -23,13 +23,10 @@
       --mark: #f1dea6;
       --vegan: #3f7d38;
       --vegan-soft: #e4efdd;
-      --vegan-chair: #5c9e4f;
       --veg: #7a7414;
       --veg-soft: #f2efd5;
-      --veg-chair: #c4b640;
       --note: #9a6a2c;
       --note-soft: #f5eadb;
-      --note-chair: #c99a5b;
       --shadow: 0 1px 2px rgba(39, 36, 31, .04), 0 4px 16px rgba(39, 36, 31, .05);
       --radius: 16px;
       --serif: 'Cormorant Garamond', Georgia, serif;
@@ -51,13 +48,10 @@
         --mark: #5d4c1c;
         --vegan: #93cc84;
         --vegan-soft: #24341f;
-        --vegan-chair: #7dbb6e;
         --veg: #dcd277;
         --veg-soft: #33311b;
-        --veg-chair: #cfc35a;
         --note: #e0b27a;
         --note-soft: #3a2e1f;
-        --note-chair: #c99a5b;
         --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
         color-scheme: dark;
       }
@@ -76,13 +70,10 @@
       --mark: #5d4c1c;
       --vegan: #93cc84;
       --vegan-soft: #24341f;
-      --vegan-chair: #7dbb6e;
       --veg: #dcd277;
       --veg-soft: #33311b;
-      --veg-chair: #cfc35a;
       --note: #e0b27a;
       --note-soft: #3a2e1f;
-      --note-chair: #c99a5b;
       --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
       color-scheme: dark;
     }
@@ -348,17 +339,6 @@
     .diet-vegan { background: var(--vegan-soft); color: var(--vegan); }
     .diet-veg { background: var(--veg-soft); color: var(--veg); }
     .diet-other { background: var(--note-soft); color: var(--note); }
-    .hit-sub .diet { margin-left: 6px; vertical-align: 1px; }
-    .card.mlad .names li .diet { margin-left: 8px; }
-    .card-diet {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin: -2px 0 6px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .card-diet .leaf { color: var(--vegan); }
 
     .tools { display: flex; justify-content: center; margin: 16px 0 0; }
     .tools[hidden], .is-searching .tools, .is-searching .diet-panel { display: none; }
@@ -447,21 +427,6 @@
     .diet-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; padding: 3px 0; font-size: 15px; }
     .diet-list .diet { margin-left: 0; }
 
-    .sala-legend {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px 16px;
-      margin-top: 10px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .sala-legend[hidden] { display: none; }
-    .sala-legend span { display: inline-flex; align-items: center; gap: 6px; }
-    .sala-legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-    .m-chair.c-vegan, .m-tbl.is-hit .m-chair.c-vegan, .m-tbl.is-active .m-chair.c-vegan { fill: var(--vegan-chair); opacity: 1; }
-    .m-chair.c-veg, .m-tbl.is-hit .m-chair.c-veg, .m-tbl.is-active .m-chair.c-veg { fill: var(--veg-chair); opacity: 1; }
-    .m-chair.c-other, .m-tbl.is-hit .m-chair.c-other, .m-tbl.is-active .m-chair.c-other { fill: var(--note-chair); opacity: 1; }
 
     .card-empty { margin: 8px 0 4px; font-size: 14px; color: var(--faint); font-style: italic; }
     .m-note { fill: var(--accent); }
@@ -543,9 +508,6 @@
       padding-top: 2px;
     }
     .names li.dim { opacity: .35; }
-    /* ime se ne lomi zbog oznake ishrane — oznaka prelazi u novi red ako nema mesta */
-    .names li.has-diet { flex-wrap: wrap; row-gap: 2px; }
-    .names li.has-diet .nm { flex: 1 1 auto; min-width: 0; }
     .card.flash { border-color: var(--accent); animation: flash 1.6s ease-out; }
     @keyframes flash {
       0% { box-shadow: 0 0 0 0 var(--accent), var(--shadow); }
@@ -666,7 +628,6 @@
         <span class="sala-hint" id="salaHint">Dodirnite sto za spisak gostiju</span>
       </div>
       <svg id="mapa" role="group" aria-label="Raspored stolova u sali"></svg>
-      <div class="sala-legend" id="salaLegend" hidden></div>
     </section>
     <section class="grid" id="grid"></section>
     <div class="tools" id="tools" hidden>
@@ -839,10 +800,8 @@
           '<span class="card-count">' + t.guests.length + ' ' + guestWord(t.guests.length) + '</span>';
       card.innerHTML =
         '<header class="card-head">' + head + '</header>' +
-        (t.dietCount ? '<p class="card-diet">' + LEAF + escapeHtml(dietSummary(t.diets)) + '</p>' : '') +
         '<ol class="names">' + t.guests.map(function (g, i) {
-          return '<li' + (t.diets[i] ? ' class="has-diet"' : '') + '><span class="seat">' + (i + 1) + '</span><span class="nm">' + escapeHtml(g) + '</span>' +
-            (t.diets[i] ? dietPill(t.diets[i]) : '') + '</li>';
+          return '<li><span class="seat">' + (i + 1) + '</span><span class="nm">' + escapeHtml(g) + '</span></li>';
         }).join('') + '</ol>' +
         (t.guests.length ? '' : '<p class="card-empty">Slobodan sto</p>');
       t.el = card;
@@ -891,12 +850,10 @@
       mapTables[t.id] = g;
     }
 
-    // diets (opciono): niz po stolicama — stolica gosta sa posebnom ishranom dobija boju
-    function drawRound(g, x, y, chairs, diets) {
+    function drawRound(g, x, y, chairs) {
       for (var i = 0; i < chairs; i++) {
         var a = -Math.PI / 2 + 2 * Math.PI * i / chairs;
-        var d = diets && diets[i];
-        svgEl('circle', { 'class': 'm-chair' + (d ? ' c-' + d.key : ''), cx: (x + 88 * Math.cos(a)).toFixed(1), cy: (y + 88 * Math.sin(a)).toFixed(1), r: 12 }, g);
+        svgEl('circle', { 'class': 'm-chair', cx: (x + 88 * Math.cos(a)).toFixed(1), cy: (y + 88 * Math.sin(a)).toFixed(1), r: 12 }, g);
       }
       svgEl('circle', { 'class': 'm-top', cx: x, cy: y, r: 64 }, g);
     }
@@ -962,33 +919,19 @@
         var x = pos[0], y = pos[1], n = t.guests.length;
         var g = svgEl('g', {}, mapa);
         svgEl('circle', { 'class': 'm-hitarea', cx: x, cy: y, r: 108 }, g);
-        drawRound(g, x, y, n || 12, t.diets); // prazan sto: crta se sa 12 stolica, kao na skici
+        drawRound(g, x, y, n || 12); // prazan sto: crta se sa 12 stolica, kao na skici
         // Sto sa ikonom (npr. fotograf) umesto broja prikazuje ikonu u sredini
         if (SALA.ikone && SALA.ikone[t.broj] === 'foto') drawCamera(g, x, y);
         else svgText(g, x, y, [String(t.broj)], 0);
-        makeClickable(g, t, t.title + (t.oznaka ? ' (' + t.oznaka + ')' : '') + ', ' + n + ' ' + guestWord(n) +
-          (t.dietCount ? ', posebna ishrana: ' + dietSummary(t.diets) : ''));
+        makeClickable(g, t, t.title + (t.oznaka ? ' (' + t.oznaka + ')' : '') + ', ' + n + ' ' + guestWord(n));
       });
 
-      // Legenda boja stolica (samo ako neko ima posebnu ishranu)
-      var seen = {}, legend = [];
-      tables.forEach(function (t) { t.diets.forEach(function (d) {
-        if (d && !seen[d.key]) { seen[d.key] = 1; legend.push(d); }
-      }); });
-      legend.sort(function (a, b) { return dietRank(a.key) - dietRank(b.key); });
-      var COLORS = { vegan: 'var(--vegan-chair)', veg: 'var(--veg-chair)', other: 'var(--note-chair)' };
-      if (legend.length) {
-        $('salaLegend').innerHTML = legend.map(function (d) {
-          return '<span><i style="background:' + COLORS[d.key] + '"></i>' + (d.key === 'other' ? 'Ostale napomene' : escapeHtml(d.label)) + ' obrok</span>';
-        }).join('');
-        $('salaLegend').hidden = false;
-      }
     }
 
     function setMapActive(id) {
       for (var k in mapTables) mapTables[k].classList.toggle('is-active', k === id);
     }
-    function setMapHits(ids, hint) {
+    function setMapHits(ids) {
       var any = false;
       for (var k in mapTables) {
         var hit = !!ids[k];
@@ -996,7 +939,7 @@
         if (hit) any = true;
       }
       mapa.classList.toggle('has-hits', any);
-      $('salaHint').textContent = any ? (hint || 'Označeni su stolovi pronađenih gostiju') : 'Dodirnite sto za spisak gostiju';
+      $('salaHint').textContent = any ? 'Označeni su stolovi pronađenih gostiju' : 'Dodirnite sto za spisak gostiju';
     }
 
     // ---------- Posebna ishrana (za konobare) ----------
@@ -1032,9 +975,6 @@
       dietOpen = open && dietTotal > 0;
       dietBtn.setAttribute('aria-expanded', String(dietOpen));
       dietPanel.hidden = !dietOpen;
-      var ids = {};
-      if (dietOpen) dietTables.forEach(function (t) { ids[t.id] = true; });
-      setMapHits(ids, 'Označeni su stolovi sa posebnom ishranom');
     }
 
     var zauzeti = regular.filter(function (t) { return t.guests.length; }).length;
@@ -1101,7 +1041,7 @@
           var html = matchName(t.guests[i], tokens);
           li.querySelector('.nm').innerHTML = html || escapeHtml(t.guests[i]);
           li.classList.toggle('dim', !html);
-          if (html) { any = true; hits.push({ table: t, html: html, idx: i }); }
+          if (html) { any = true; hits.push({ table: t, html: html }); }
         });
         t.el.hidden = !any;
       });
@@ -1110,12 +1050,12 @@
       setMapHits(hitIds);
 
       results.innerHTML = hits.map(function (h, i) {
-        var t = h.table, d = t.diets[h.idx];
+        var t = h.table;
         var badge = t.mlad
           ? '<span class="hit-table mlad"><small>Sto</small><b>★</b></span>'
           : '<span class="hit-table"><small>Sto</small><b>' + t.broj + '</b></span>';
         return '<button type="button" class="hit" data-i="' + i + '">' +
-          '<span class="hit-name">' + h.html + '<span class="hit-sub">' + t.title + (t.oznaka ? ' · ' + escapeHtml(t.oznaka) : '') + (d ? dietPill(d) : '') + '</span></span>' + badge +
+          '<span class="hit-name">' + h.html + '<span class="hit-sub">' + t.title + (t.oznaka ? ' · ' + escapeHtml(t.oznaka) : '') + '</span></span>' + badge +
           '</button>';
       }).join('');
       Array.prototype.forEach.call(results.querySelectorAll('.hit'), function (btn) {
