@@ -1,4 +1,4 @@
-// Raspored sedenja — izmenite imena ovde; stranica index.html se sama ažurira.
+// Raspored sedenja — NE MENJATI RUČNO: pravi se iz raspored-sedenja.md (python3 alati/sync.py).
 // Mladenački sto se prikazuje zasebno i ne ulazi u ukupan broj gostiju.
 // Zakomentarisana imena (//) se ne prikazuju i ne računaju.
 window.RASPORED = {
@@ -16,96 +16,6 @@ window.RASPORED = {
     {
       "broj": 1,
       "gosti": [
-        "Jovan Irović",
-        "Mira Irović",
-        "Ljiljana Bogdanović",
-        "Zlatko Irović",
-        "Kristina Čairović",
-        "Aleksandar Čairović",
-        "Miloš Milošanović",
-        "Milena Milošanović",
-        "Milan Bogojević",
-        "Anđa Bogojević"
-      ]
-    },
-    {
-      "broj": 2,
-      "gosti": [
-        "Gordana Lazarević",
-        "Saša Lazarević",
-        "Jelena Lazarević",
-        "Ana Lazarević",
-        "Dragoljub Novaković",
-        "Mirjana Novaković",
-        "Dejan Novaković",
-        "Dragana Novaković",
-        "Nikola Novaković",
-        "Anabela Palfi",
-        "Marko Novaković"
-      ]
-    },
-    {
-      "broj": 3,
-      "gosti": [
-        "Petar Bogdanović",
-        "Kristina Krčmarević Bogdanović",
-        "Marijana Bogdanović",
-        "Mladen Krčmarević",
-        "Ksenija Dimitrijević",
-        "Srđan Miladinović",
-        "Sara Miladinović",
-        "Marko Balabanović",
-        "Anđela Novaković",
-        "Borko Rančić",
-        "Sara Danilović"
-      ]
-    },
-    {
-      "broj": 4,
-      "gosti": [
-        "Milica Jelić",
-        "Ivan Jelić",
-        // "Dunja Jelić"
-        "Nenad Tošić",
-        "Sofija Tošić",
-        "Maja Marinković",
-        "Miloš Marinković",
-        "Jelena Bajović",
-        "Cihan Çimen",
-        "Dragana Radišić"
-      ]
-    },
-    {
-      "broj": 5,
-      "gosti": [
-        "Dimitrije Dimitrijević",
-        "Milica Džodić Bursać",
-        "Jelena Šljivančanin",
-        "Dušan Prokić",
-        "Dalibor Vidović",
-        "Ivana Antić",
-        "Nikola Miličević",
-        "Zdravko Radmanović",
-        "Sandra Radmanović"
-      ]
-    },
-    {
-      "broj": 6,
-      "gosti": [
-        "Siniša Komlen",
-        "Jelica Komlen",
-        "Nikola Čalija",
-        "Andrijana Stanić",
-        "Nenad Lazić",
-        "Ognjen Knežević",
-        "Andria Mićunović",
-        "Nemanja Janjić",
-        "Sanja Vujčić"
-      ]
-    },
-    {
-      "broj": 7,
-      "gosti": [
         "Ljuba Vesić",
         "Dragica Vesić",
         "Dušica Stojanović",
@@ -120,24 +30,7 @@ window.RASPORED = {
       ]
     },
     {
-      "broj": 8,
-      "gosti": [
-        "Željko Ljubičić",
-        "Božana Divac",
-        "Tomanija Mihailović",
-        "Goca Mihailović",
-        "Miki Mihailović",
-        "Saša Stanković",
-        "Ivana Stanković",
-        "Snežana Mijailović",
-        "Petrija Petrović",
-        "Stoja Ostojić",
-        "Mirko Lunić",
-        "Vjera Lunić"
-      ]
-    },
-    {
-      "broj": 9,
+      "broj": 2,
       "gosti": [
         "Mila Živković",
         "Siniša Štetić",
@@ -154,7 +47,7 @@ window.RASPORED = {
       ]
     },
     {
-      "broj": 10,
+      "broj": 3,
       "gosti": [
         "Rajko Spasojević",
         "Ljilja Spasojević",
@@ -171,7 +64,53 @@ window.RASPORED = {
       ]
     },
     {
-      "broj": 11,
+      "broj": 5,
+      "gosti": [
+        "Željko Ljubičić",
+        "Božana Divac",
+        "Tomanija Mihailović",
+        "Goca Mihailović",
+        "Miki Mihailović",
+        "Saša Stanković",
+        "Ivana Stanković",
+        "Snežana Mijailović",
+        "Petrija Petrović",
+        "Stoja Ostojić",
+        "Mirko Lunić",
+        "Vjera Lunić"
+      ]
+    },
+    {
+      "broj": 6,
+      "gosti": [
+        "Nikica Strižak",
+        "Nikola Šešić",
+        "Željko Tešić",
+        "Ivana Vasiljević", // vegetarijanac
+        "Jovana Deljanin",
+        "Marija Dušić",
+        "Miljana Vida",
+        "Gabor Vida"
+      ]
+    },
+    {
+      "broj": 7,
+      "gosti": [
+        "Jan Boronj",
+        "Natalija Fijol",
+        "Karolina Janus", // vegan
+        "Paulina Krupska", // vegan
+        "Laura Đido", // vegetarijanc
+        "Jordanka Cigan",
+        "Lujza Urbancova",
+        "Marijana Roščić",
+        "Kasja Andžejevska",
+        "Isidora Starčević",
+        "Sebastijan Komorovski"
+      ]
+    },
+    {
+      "broj": 8,
       "gosti": [
         "Dule Mirković",
         "Pera Vuksanović",
@@ -187,24 +126,22 @@ window.RASPORED = {
       ]
     },
     {
-      "broj": 12,
+      "broj": 9,
       "gosti": [
-        "Mira Petrović",
-        "Lana Petrović",
-        "Milijana Radovanović",
-        "Tanja Radovanović",
-        "Natalija Radovanović",
-        "Zorica Krčmarević",
-        "Neša Krčmarević",
-        "Vesna Milosavljević",
-        "Bojan/Bojana Milosavljević",
-        "Sanja Jovičić",
-        "Miloš Jovičić",
-        "Slađa Jovanović"
+        "Pasquale/Paskvale Malgieri",
+        "Consiglia/Konsilja Dileo",
+        "Andrea Polinelli",
+        "Anna Sikorska Polinelli",
+        "Filip Ljubisavljević",
+        "Sandra Vidić",
+        "Minja Stefanović",
+        "Miloš Popović",
+        "Danijela Đorović",
+        "Miša Đorović"
       ]
     },
     {
-      "broj": 13,
+      "broj": 10,
       "gosti": [
         "Sanja Lunić",
         "Milan Lunić",
@@ -221,47 +158,110 @@ window.RASPORED = {
       ]
     },
     {
+      "broj": 11,
+      "gosti": [
+        "Mira Petrović",
+        "Lana Petrović",
+        "Milijana Radovanović",
+        "Tanja Radovanović",
+        "Natalija Radovanović",
+        "Zorica Krčmarević",
+        "Neša Krčmarević",
+        "Vesna Milosavljević",
+        "Bojan/Bojana Milosavljević",
+        "Sanja Jovičić",
+        "Miloš Jovičić",
+        "Slađa Jovanović"
+      ]
+    },
+    {
+      "broj": 12,
+      "gosti": [
+        "Jovan Irović",
+        "Mira Irović",
+        "Ljiljana Bogdanović",
+        "Zlatko Irović",
+        "Kristina Čairović",
+        "Aleksandar Čairović",
+        "Miloš Milošanović",
+        "Milena Milošanović",
+        "Milan Bogojević",
+        "Anđa Bogojević"
+      ]
+    },
+    {
+      "broj": 13,
+      "gosti": [
+        "Petar Bogdanović",
+        "Kristina Krčmarević Bogdanović",
+        "Marijana Bogdanović",
+        "Mladen Krčmarević",
+        "Ksenija Dimitrijević",
+        "Srđan Miladinović",
+        "Sara Miladinović",
+        "Marko Balabanović",
+        "Anđela Novaković",
+        "Borko Rančić",
+        "Sara Danilović"
+      ]
+    },
+    {
       "broj": 14,
       "gosti": [
-        "Nikica Strižak",
-        "Nikola Šešić",
-        "Željko Tešić",
-        "Ivana Vasiljević",
-        "Jovana Deljanin",
-        "Marija Dušić",
-        "Miljana Vida",
-        "Gabor Vida"
+        "Siniša Komlen",
+        "Jelica Komlen",
+        "Nikola Čalija",
+        "Andrijana Stanić",
+        "Nenad Lazić",
+        "Ognjen Knežević",
+        "Andria Mićunović",
+        "Nemanja Janjić",
+        "Sanja Vujčić"
       ]
     },
     {
       "broj": 15,
       "gosti": [
-        "Pasquale/Paskvale Malgieri",
-        "Consiglia/Konsilja Dileo",
-        "Andrea Polinelli",
-        "Anna Sikorska Polinelli",
-        "Filip Ljubisavljević",
-        "Sandra Vidić",
-        "Minja Stefanović",
-        "Miloš Popović",
-        "Danijela Đorović",
-        "Miša Đorović"
+        "Milica Jelić",
+        "Ivan Jelić",
+        // "Dunja Jelić"
+        "Nenad Tošić",
+        "Sofija Tošić",
+        "Maja Marinković",
+        "Miloš Marinković",
+        "Jelena Bajović",
+        "Cihan Çimen",
+        "Dragana Radišić"
       ]
     },
     {
       "broj": 16,
       "gosti": [
-        "Jan Boronj",
-        "Natalija Fijol",
-        "Karolina Janus",
-        "Paulina Krupska",
-        "Laura Đido",
-        "Jordanka Cigan",
-        "Lujza Urbancova",
-        "Marijana Roščić",
-        "Kasja Andžejevska",
-        "Isidora Starčević",
-        "Sebastijan Komorovski"
+        "Gordana Lazarević",
+        "Saša Lazarević",
+        "Jelena Lazarević",
+        "Ana Lazarević",
+        "Dragoljub Novaković",
+        "Mirjana Novaković",
+        "Dejan Novaković",
+        "Dragana Novaković",
+        "Nikola Novaković",
+        "Anabela Palfi",
+        "Marko Novaković"
+      ]
+    },
+    {
+      "broj": 17,
+      "gosti": [
+        "Dimitrije Dimitrijević",
+        "Milica Džodić Bursać",
+        "Jelena Šljivančanin",
+        "Dušan Prokić",
+        "Dalibor Vidović",
+        "Ivana Antić",
+        "Nikola Miličević",
+        "Zdravko Radmanović", // vegetarijanac
+        "Sandra Radmanović"
       ]
     }
   ]

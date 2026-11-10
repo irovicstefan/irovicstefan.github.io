@@ -253,8 +253,82 @@
       transition: background .15s, color .15s, border-color .15s;
     }
     .jump button:hover { border-color: var(--accent); color: var(--accent); }
-    .jump .jump-mlad { font-family: var(--serif); font-size: 17px; font-style: italic; font-weight: 500; }
-    .is-searching .jump { display: none; }
+
+    /* Mapa sale */
+    .sala {
+      max-width: 760px;
+      margin: 28px auto 24px;
+      padding: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .is-searching .sala { margin-top: 0; }
+    .sala-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .sala-title { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+    .sala-hint { font-size: 12px; color: var(--faint); text-align: right; }
+    .sala svg { display: block; width: 100%; height: auto; }
+    .m-tbl { cursor: pointer; outline: none; transition: opacity .2s; }
+    .m-hitarea { fill: transparent; }
+    .m-chair { fill: var(--line); transition: fill .15s; }
+    .m-top { fill: var(--surface); stroke: var(--accent); stroke-width: 4; transition: fill .15s; }
+    .m-tbl text {
+      fill: var(--ink);
+      font-family: var(--serif);
+      font-size: 76px;
+      font-weight: 600;
+      font-variant-numeric: lining-nums;
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+    }
+    .m-mlad .m-top { fill: var(--accent-soft); }
+    .m-mlad text { font-size: 54px; font-style: italic; font-weight: 500; }
+    .m-tbl:hover .m-top, .m-tbl:focus-visible .m-top { fill: var(--accent-soft); }
+    .m-tbl:focus-visible .m-top { stroke-width: 9; }
+    .m-tbl.is-hit .m-top, .m-tbl.is-active .m-top { fill: var(--accent); }
+    .m-tbl.is-hit text, .m-tbl.is-active text { fill: var(--accent-ink); }
+    .m-tbl.is-hit .m-chair, .m-tbl.is-active .m-chair { fill: var(--accent); opacity: .45; }
+    .has-hits .m-tbl:not(.is-hit) { opacity: .35; }
+    .m-static rect { fill: var(--surface-2); stroke: var(--faint); stroke-width: 3; }
+    .card-empty { margin: 8px 0 4px; font-size: 14px; color: var(--faint); font-style: italic; }
+    .m-note { fill: var(--accent); }
+    .m-pillar-ring { fill: none; stroke: var(--faint); stroke-width: 2.5; }
+    .m-pillar { fill: var(--ink); opacity: .8; }
+    .has-hits .m-pillars { opacity: .4; }
+    .m-ico { fill: var(--accent); }
+    .m-ico-cut { fill: var(--surface); }
+    .m-tbl:hover .m-ico-cut, .m-tbl:focus-visible .m-ico-cut { fill: var(--accent-soft); }
+    .m-tbl.is-hit .m-ico, .m-tbl.is-active .m-ico { fill: var(--accent-ink); }
+    .m-tbl.is-hit .m-ico-cut, .m-tbl.is-active .m-ico-cut { fill: var(--accent); }
+    .card-tag {
+      display: inline-block;
+      margin-left: 4px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      align-self: center;
+    }
+    .m-static text {
+      fill: var(--muted);
+      font-family: var(--sans);
+      font-size: 54px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
 
     /* Cards */
     .grid {
@@ -355,6 +429,11 @@
       .hero { padding-top: 64px; }
       .grid { grid-template-columns: 1fr; }
       .hit-name { font-size: 17px; }
+      .sala { padding: 12px 10px; }
+      .m-tbl text { font-size: 104px; }
+      .m-mlad text { font-size: 66px; }
+      .m-static text { font-size: 72px; letter-spacing: .06em; }
+      .m-top { stroke-width: 6; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -400,17 +479,24 @@
 
   <main class="wrap">
     <section class="results" id="results" hidden aria-label="Rezultati pretrage"></section>
-    <nav class="jump" id="jump" aria-label="Brzi skok na sto"></nav>
-    <section class="grid" id="grid"></section>
     <div class="empty" id="empty" hidden>
       <strong>Nismo pronašli to ime</strong>
       <p>Proverite pravopis ili probajte samo ime ili samo prezime.</p>
     </div>
+    <section class="sala" aria-label="Mapa sale">
+      <div class="sala-head">
+        <span class="sala-title">Sala</span>
+        <span class="sala-hint" id="salaHint">Dodirnite sto za spisak gostiju</span>
+      </div>
+      <svg id="mapa" role="group" aria-label="Raspored stolova u sali"></svg>
+    </section>
+    <section class="grid" id="grid"></section>
   </main>
 
   <footer class="wrap" id="footer"></footer>
 
   <script src="data/raspored.js"></script>
+  <script src="data/sala.js"></script>
   <script>
   (function () {
     'use strict';
@@ -500,7 +586,8 @@
       tables.push({ id: 'mladenacki', mlad: true, title: 'Mladenački sto', guests: DATA.mladenacki });
     }
     DATA.stolovi.forEach(function (s) {
-      tables.push({ id: 'sto-' + s.broj, broj: s.broj, title: 'Sto ' + s.broj, guests: s.gosti });
+      var oznaka = (window.SALA && window.SALA.oznake && window.SALA.oznake[s.broj]) || '';
+      tables.push({ id: 'sto-' + s.broj, broj: s.broj, title: 'Sto ' + s.broj, oznaka: oznaka, guests: s.gosti });
     });
     var regular = tables.filter(function (t) { return !t.mlad; });
     var totalGuests = regular.reduce(function (s, t) { return s + t.guests.length; }, 0);
@@ -520,30 +607,144 @@
       card.id = t.id;
       var head = t.mlad
         ? '<span class="card-num">Mladenački sto</span>'
-        : '<span class="card-title"><span class="card-label">Sto</span><span class="card-num">' + t.broj + '</span></span>' +
+        : '<span class="card-title"><span class="card-label">Sto</span><span class="card-num">' + t.broj + '</span>' +
+          (t.oznaka ? '<span class="card-tag">' + escapeHtml(t.oznaka) + '</span>' : '') + '</span>' +
           '<span class="card-count">' + t.guests.length + ' ' + guestWord(t.guests.length) + '</span>';
       card.innerHTML =
         '<header class="card-head">' + head + '</header>' +
         '<ol class="names">' + t.guests.map(function (g, i) {
           return '<li><span class="seat">' + (i + 1) + '</span><span class="nm">' + escapeHtml(g) + '</span></li>';
-        }).join('') + '</ol>';
+        }).join('') + '</ol>' +
+        (t.guests.length ? '' : '<p class="card-empty">Slobodan sto</p>');
       t.el = card;
       t.items = Array.prototype.slice.call(card.querySelectorAll('li'));
       grid.appendChild(card);
     });
 
-    var jump = $('jump');
-    tables.forEach(function (t) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = t.mlad ? 'Mladenački' : t.broj;
-      if (t.mlad) b.className = 'jump-mlad';
-      b.setAttribute('aria-label', t.title);
-      b.addEventListener('click', function () { goTo(t.id); });
-      jump.appendChild(b);
-    });
+    // ---------- Mapa sale ----------
+    var SALA = window.SALA;
+    var mapa = $('mapa');
+    var mapTables = {};
+    var NS = 'http://www.w3.org/2000/svg';
+    function svgEl(tag, attrs, parent) {
+      var e = document.createElementNS(NS, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      if (parent) parent.appendChild(e);
+      return e;
+    }
+    function svgText(parent, x, y, lines, lineHeight) {
+      var t = svgEl('text', { x: x, y: y }, parent);
+      lines.forEach(function (line, i) {
+        var ts = svgEl('tspan', { x: x, dy: i === 0 ? -(lines.length - 1) * lineHeight / 2 : lineHeight }, t);
+        ts.textContent = line;
+      });
+      return t;
+    }
+    function makeClickable(g, t, label) {
+      g.setAttribute('class', g.getAttribute('class') + ' m-tbl');
+      g.setAttribute('tabindex', '0');
+      g.setAttribute('role', 'button');
+      g.setAttribute('aria-label', label);
+      g.addEventListener('click', function () { goTo(t.id); });
+      g.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goTo(t.id); }
+      });
+      mapTables[t.id] = g;
+    }
 
-    $('footer').textContent = regular.length + ' stolova · ' + totalGuests + ' ' + guestWord(totalGuests) +
+    function drawRound(g, x, y, chairs) {
+      for (var i = 0; i < chairs; i++) {
+        var a = -Math.PI / 2 + 2 * Math.PI * i / chairs;
+        svgEl('circle', { 'class': 'm-chair', cx: (x + 88 * Math.cos(a)).toFixed(1), cy: (y + 88 * Math.sin(a)).toFixed(1), r: 12 }, g);
+      }
+      svgEl('circle', { 'class': 'm-top', cx: x, cy: y, r: 64 }, g);
+    }
+    var ICON_SCALE = 0.68; // veličina ikonica u stolovima (1 = puna veličina)
+
+    // Note (♫) nacrtane kao oblik, da izgleda isto u svakom pregledaču
+    function drawNote(g, x, y) {
+      var n = svgEl('g', { 'class': 'm-note', transform: 'translate(' + x + ' ' + y + ') scale(' + ICON_SCALE + ')' }, g);
+      // dve note spojene gredom (♫), istih dimenzija kao fotoaparat (~76 × 64)
+      svgEl('ellipse', { cx: -22, cy: 20, rx: 16, ry: 12, transform: 'rotate(-20 -22 20)' }, n);
+      svgEl('ellipse', { cx: 21, cy: 11, rx: 16, ry: 12, transform: 'rotate(-20 21 11)' }, n);
+      svgEl('rect', { x: -10, y: -24, width: 8, height: 44 }, n);
+      svgEl('rect', { x: 29, y: -33, width: 8, height: 44 }, n);
+      svgEl('path', { d: 'M-10 -24 L37 -34 L37 -19 L-10 -9 Z' }, n);
+    }
+    // Fotoaparat, centriran u sredini stola (oblik je simetričan oko x, y)
+    function drawCamera(g, x, y) {
+      var c = svgEl('g', { transform: 'translate(' + x + ' ' + y + ') scale(' + ICON_SCALE + ')' }, g);
+      svgEl('rect', { 'class': 'm-ico', x: -13, y: -30, width: 26, height: 12, rx: 4 }, c);
+      svgEl('rect', { 'class': 'm-ico', x: -38, y: -22, width: 76, height: 52, rx: 11 }, c);
+      svgEl('circle', { 'class': 'm-ico-cut', cx: 0, cy: 4, r: 17 }, c);
+      svgEl('circle', { 'class': 'm-ico', cx: 0, cy: 4, r: 9 }, c);
+      svgEl('circle', { 'class': 'm-ico-cut', cx: 26, cy: -11, r: 4 }, c);
+    }
+
+    if (SALA && mapa) {
+      mapa.setAttribute('viewBox', SALA.viewBox.join(' '));
+
+      // Stubovi (crtaju se prvi, ispod svega)
+      var gp = svgEl('g', { 'class': 'm-pillars', 'aria-hidden': 'true' }, mapa);
+      (SALA.stubovi || []).forEach(function (p) {
+        svgEl('rect', { 'class': 'm-pillar-ring', x: p[0] - 17, y: p[1] - 17, width: 34, height: 34, transform: 'rotate(45 ' + p[0] + ' ' + p[1] + ')' }, gp);
+        svgEl('rect', { 'class': 'm-pillar', x: p[0] - 10, y: p[1] - 10, width: 20, height: 20 }, gp);
+      });
+
+      // Bina, fotograf, muzika (nisu klikabilni)
+      var b = SALA.bina;
+      var gb = svgEl('g', { 'class': 'm-static' }, mapa);
+      svgEl('rect', { x: b.x, y: b.y, width: b.w, height: b.h, rx: 14 }, gb);
+      svgText(gb, b.x + b.w / 2, b.y + b.h / 2, ['BINA'], 0);
+      (SALA.ostalo || []).forEach(function (o) {
+        var g = svgEl('g', { 'class': 'm-extra', role: 'img', 'aria-label': 'Sto: ' + o.naziv }, mapa);
+        drawRound(g, o.x, o.y, o.stolica || 12);
+        if (o.ikona === 'foto') drawCamera(g, o.x, o.y);
+        else drawNote(g, o.x, o.y);
+      });
+
+      // Mladenački sto
+      var mladT = tables.filter(function (t) { return t.mlad; })[0];
+      if (mladT && SALA.mladenacki) {
+        var m = SALA.mladenacki;
+        var gm = svgEl('g', { 'class': 'm-mlad' }, mapa);
+        svgEl('rect', { 'class': 'm-hitarea', x: m.x - 20, y: m.y - 20, width: m.w + 40, height: m.h + 40 }, gm);
+        svgEl('rect', { 'class': 'm-top', x: m.x, y: m.y, width: m.w, height: m.h, rx: 16 }, gm);
+        svgText(gm, m.x + m.w / 2, m.y + m.h / 2, ['Mladenački', 'sto'], 64);
+        makeClickable(gm, mladT, 'Mladenački sto');
+      }
+
+      // Okrugli stolovi — broj stolica = broj gostiju
+      regular.forEach(function (t) {
+        var pos = SALA.stolovi[t.broj];
+        if (!pos) return;
+        var x = pos[0], y = pos[1], n = t.guests.length;
+        var g = svgEl('g', {}, mapa);
+        svgEl('circle', { 'class': 'm-hitarea', cx: x, cy: y, r: 108 }, g);
+        drawRound(g, x, y, n || 12); // prazan sto: crta se sa 12 stolica, kao na skici
+        // Sto sa ikonom (npr. fotograf) umesto broja prikazuje ikonu u sredini
+        if (SALA.ikone && SALA.ikone[t.broj] === 'foto') drawCamera(g, x, y);
+        else svgText(g, x, y, [String(t.broj)], 0);
+        makeClickable(g, t, t.title + (t.oznaka ? ' (' + t.oznaka + ')' : '') + ', ' + n + ' ' + guestWord(n));
+      });
+    }
+
+    function setMapActive(id) {
+      for (var k in mapTables) mapTables[k].classList.toggle('is-active', k === id);
+    }
+    function setMapHits(ids) {
+      var any = false;
+      for (var k in mapTables) {
+        var hit = !!ids[k];
+        mapTables[k].classList.toggle('is-hit', hit);
+        if (hit) any = true;
+      }
+      mapa.classList.toggle('has-hits', any);
+      $('salaHint').textContent = any ? 'Označeni su stolovi pronađenih gostiju' : 'Dodirnite sto za spisak gostiju';
+    }
+
+    var zauzeti = regular.filter(function (t) { return t.guests.length; }).length;
+    $('footer').textContent = zauzeti + ' stolova · ' + totalGuests + ' ' + guestWord(totalGuests) +
       ' · uz Mladenački sto';
 
     // ---------- Navigacija ----------
@@ -551,9 +752,11 @@
       var t = tables.filter(function (x) { return x.id === id; })[0];
       if (!t) return;
       if (!(opts && opts.keepSearch) && input.value) clearSearch();
+      setMapActive(id);
       t.el.hidden = false;
       t.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      t.el.classList.remove('flash');
+      // označen je samo poslednji izabrani sto
+      tables.forEach(function (x) { x.el.classList.remove('flash'); });
       void t.el.offsetWidth;
       t.el.classList.add('flash');
       try { history.replaceState(null, '', '#' + id); } catch (e) {}
@@ -577,8 +780,11 @@
       var active = q.replace(/\s/g, '').length >= 2;
       document.body.classList.toggle('is-searching', active);
       $('searchbar').classList.toggle('has-query', raw.length > 0);
+      setMapActive(null);
+      tables.forEach(function (x) { x.el.classList.remove('flash'); });
 
       if (!active) {
+        setMapHits({});
         tables.forEach(function (t) {
           t.el.hidden = false;
           t.items.forEach(function (li, i) {
@@ -604,6 +810,9 @@
         });
         t.el.hidden = !any;
       });
+      var hitIds = {};
+      hits.forEach(function (h) { hitIds[h.table.id] = true; });
+      setMapHits(hitIds);
 
       results.innerHTML = hits.map(function (h, i) {
         var t = h.table;
@@ -611,7 +820,7 @@
           ? '<span class="hit-table mlad"><small>Sto</small><b>★</b></span>'
           : '<span class="hit-table"><small>Sto</small><b>' + t.broj + '</b></span>';
         return '<button type="button" class="hit" data-i="' + i + '">' +
-          '<span class="hit-name">' + h.html + '<span class="hit-sub">' + t.title + '</span></span>' + badge +
+          '<span class="hit-name">' + h.html + '<span class="hit-sub">' + t.title + (t.oznaka ? ' · ' + escapeHtml(t.oznaka) : '') + '</span></span>' + badge +
           '</button>';
       }).join('');
       Array.prototype.forEach.call(results.querySelectorAll('.hit'), function (btn) {
