@@ -66,6 +66,19 @@ window.RASPORED = {
     {
       "broj": 5,
       "gosti": [
+        "Nikica Strižak",
+        "Nikola Šešić",
+        "Željko Tešić",
+        { "ime": "Ivana Vasiljević", "napomena": "vegetarijanac" },
+        "Jovana Deljanin",
+        "Marija Dušić",
+        "Miljana Vida",
+        "Gabor Vida"
+      ]
+    },
+    {
+      "broj": 6,
+      "gosti": [
         "Željko Ljubičić",
         "Božana Divac",
         "Tomanija Mihailović",
@@ -78,19 +91,6 @@ window.RASPORED = {
         "Stoja Ostojić",
         "Mirko Lunić",
         "Vjera Lunić"
-      ]
-    },
-    {
-      "broj": 6,
-      "gosti": [
-        "Nikica Strižak",
-        "Nikola Šešić",
-        "Željko Tešić",
-        { "ime": "Ivana Vasiljević", "napomena": "vegetarijanac" },
-        "Jovana Deljanin",
-        "Marija Dušić",
-        "Miljana Vida",
-        "Gabor Vida"
       ]
     },
     {

@@ -11,8 +11,8 @@
 | [Sto 1](#sto-1) | 11 |
 | [Sto 2](#sto-2) | 11 |
 | [Sto 3](#sto-3) | 12 |
-| [Sto 5](#sto-5) | 12 |
-| [Sto 6](#sto-6) | 8 |
+| [Sto 5](#sto-5) | 8 |
+| [Sto 6](#sto-6) | 12 |
 | [Sto 7](#sto-7) | 12 |
 | [Sto 8](#sto-8) | 11 |
 | [Sto 9](#sto-9) | 10 |
@@ -101,6 +101,21 @@
 
 ## Sto 5
 
+*8 gostiju*
+
+| # | Ime i prezime | Napomena |
+|---:|---|---|
+| 1 | Nikica Strižak | |
+| 2 | Nikola Šešić | |
+| 3 | Željko Tešić | |
+| 4 | Ivana Vasiljević | vegetarijanac |
+| 5 | Jovana Deljanin | |
+| 6 | Marija Dušić | |
+| 7 | Miljana Vida | |
+| 8 | Gabor Vida | |
+
+## Sto 6
+
 *12 gostiju*
 
 | # | Ime i prezime | Napomena |
@@ -117,21 +132,6 @@
 | 10 | Stoja Ostojić | |
 | 11 | Mirko Lunić | |
 | 12 | Vjera Lunić | |
-
-## Sto 6
-
-*8 gostiju*
-
-| # | Ime i prezime | Napomena |
-|---:|---|---|
-| 1 | Nikica Strižak | |
-| 2 | Nikola Šešić | |
-| 3 | Željko Tešić | |
-| 4 | Ivana Vasiljević | vegetarijanac |
-| 5 | Jovana Deljanin | |
-| 6 | Marija Dušić | |
-| 7 | Miljana Vida | |
-| 8 | Gabor Vida | |
 
 ## Sto 7
 
