@@ -9,11 +9,11 @@
 | Sto | Broj gostiju |
 |---|---:|
 | [Sto 1](#sto-1) | 11 |
-| [Sto 2](#sto-2) | 12 |
+| [Sto 2](#sto-2) | 11 |
 | [Sto 3](#sto-3) | 12 |
 | [Sto 5](#sto-5) | 12 |
 | [Sto 6](#sto-6) | 8 |
-| [Sto 7](#sto-7) | 11 |
+| [Sto 7](#sto-7) | 12 |
 | [Sto 8](#sto-8) | 11 |
 | [Sto 9](#sto-9) | 10 |
 | [Sto 10](#sto-10) | 12 |
@@ -64,22 +64,21 @@
 
 ## Sto 2
 
-*12 gostiju*
+*11 gostiju*
 
 | # | Ime i prezime | Napomena |
 |---:|---|---|
-| 1 | Mila Živković | |
-| 2 | Siniša Štetić | |
-| 3 | Lena Štetić | |
-| 4 | Branislav Ćetenović | |
-| 5 | Dragan Milanović | |
-| 6 | Dragica Milanović | |
-| 7 | Saša Ivanović | |
-| 8 | Danijela Ivanović | |
-| 9 | Zorica Milovanović | |
-| 10 | Dejan Milovanović | |
-| 11 | Dragana Milovanović | |
-| 12 | Darko Milovanović | |
+| 1 | Jan Boronj | |
+| 2 | Natalija Fijol | |
+| 3 | Karolina Janus | vegan |
+| 4 | Paulina Krupska | vegan |
+| 5 | Laura Đido | vegetarijanac |
+| 6 | Jordanka Cigan | |
+| 7 | Lujza Urbancova | |
+| 8 | Marijana Roščić | |
+| 9 | Kasja Andžejevska | |
+| 10 | Isidora Starčević | |
+| 11 | Sebastijan Komorovski | |
 
 ## Sto 3
 
@@ -136,21 +135,22 @@
 
 ## Sto 7
 
-*11 gostiju*
+*12 gostiju*
 
 | # | Ime i prezime | Napomena |
 |---:|---|---|
-| 1 | Jan Boronj | |
-| 2 | Natalija Fijol | |
-| 3 | Karolina Janus | vegan |
-| 4 | Paulina Krupska | vegan |
-| 5 | Laura Đido | vegetarijanac |
-| 6 | Jordanka Cigan | |
-| 7 | Lujza Urbancova | |
-| 8 | Marijana Roščić | |
-| 9 | Kasja Andžejevska | |
-| 10 | Isidora Starčević | |
-| 11 | Sebastijan Komorovski | |
+| 1 | Mila Živković | |
+| 2 | Siniša Štetić | |
+| 3 | Lena Štetić | |
+| 4 | Branislav Ćetenović | |
+| 5 | Dragan Milanović | |
+| 6 | Dragica Milanović | |
+| 7 | Saša Ivanović | |
+| 8 | Danijela Ivanović | |
+| 9 | Zorica Milovanović | |
+| 10 | Dejan Milovanović | |
+| 11 | Dragana Milovanović | |
+| 12 | Darko Milovanović | |
 
 ## Sto 8
 

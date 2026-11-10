@@ -33,18 +33,17 @@ window.RASPORED = {
     {
       "broj": 2,
       "gosti": [
-        "Mila Živković",
-        "Siniša Štetić",
-        "Lena Štetić",
-        "Branislav Ćetenović",
-        "Dragan Milanović",
-        "Dragica Milanović",
-        "Saša Ivanović",
-        "Danijela Ivanović",
-        "Zorica Milovanović",
-        "Dejan Milovanović",
-        "Dragana Milovanović",
-        "Darko Milovanović"
+        "Jan Boronj",
+        "Natalija Fijol",
+        { "ime": "Karolina Janus", "napomena": "vegan" },
+        { "ime": "Paulina Krupska", "napomena": "vegan" },
+        { "ime": "Laura Đido", "napomena": "vegetarijanac" },
+        "Jordanka Cigan",
+        "Lujza Urbancova",
+        "Marijana Roščić",
+        "Kasja Andžejevska",
+        "Isidora Starčević",
+        "Sebastijan Komorovski"
       ]
     },
     {
@@ -97,17 +96,18 @@ window.RASPORED = {
     {
       "broj": 7,
       "gosti": [
-        "Jan Boronj",
-        "Natalija Fijol",
-        { "ime": "Karolina Janus", "napomena": "vegan" },
-        { "ime": "Paulina Krupska", "napomena": "vegan" },
-        { "ime": "Laura Đido", "napomena": "vegetarijanac" },
-        "Jordanka Cigan",
-        "Lujza Urbancova",
-        "Marijana Roščić",
-        "Kasja Andžejevska",
-        "Isidora Starčević",
-        "Sebastijan Komorovski"
+        "Mila Živković",
+        "Siniša Štetić",
+        "Lena Štetić",
+        "Branislav Ćetenović",
+        "Dragan Milanović",
+        "Dragica Milanović",
+        "Saša Ivanović",
+        "Danijela Ivanović",
+        "Zorica Milovanović",
+        "Dejan Milovanović",
+        "Dragana Milovanović",
+        "Darko Milovanović"
       ]
     },
     {
