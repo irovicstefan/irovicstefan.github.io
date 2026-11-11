@@ -10,5 +10,6 @@ window.PROTOKOL = [
   { "vreme": "17:00", "naziv": "Prvi ples" },
   { "vreme": "18:30", "do": "19:00", "okvirno": true, "naziv": "Bacanje bidermajera" },
   { "vreme": "20:00", "naziv": "Torta i trubači" },
-  { "vreme": "20:15", "naziv": "DJ" }
+  { "vreme": "20:15", "do": "20:45", "naziv": "DJ" },
+  { "vreme": "20:45", "naziv": "Nastavak veselja uz bend" }
 ];
