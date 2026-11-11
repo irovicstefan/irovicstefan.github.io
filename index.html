@@ -545,6 +545,80 @@
     .empty p { margin: 4px 0; }
     .empty strong { font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--ink); display: block; margin-bottom: 4px; }
 
+    /* Protokol */
+    .protokol {
+      max-width: 560px;
+      margin: 48px auto 28px;
+      scroll-margin-top: 110px;
+    }
+    .protokol[hidden], .is-searching .protokol { display: none; }
+    .protokol-head { text-align: center; margin-bottom: 20px; }
+    .protokol-head h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 26px 24px 8px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      column-gap: 22px;
+    }
+    .tl-time {
+      text-align: right;
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1;
+      font-variant-numeric: lining-nums tabular-nums;
+      color: var(--ink);
+      padding-bottom: 28px;
+    }
+    .timeline li:last-child .tl-time { padding-bottom: 20px; }
+    .tl-body {
+      position: relative;
+      padding: 1px 0 28px 26px;
+    }
+    /* linija */
+    .tl-body::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 18px;
+      bottom: -2px;
+      width: 1px;
+      background: color-mix(in srgb, var(--accent) 35%, var(--line));
+    }
+    .timeline li:last-child .tl-body::before { display: none; }
+    .timeline li:last-child .tl-body { padding-bottom: 20px; }
+    /* tačka */
+    .tl-body::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1.5px solid var(--accent);
+      box-sizing: border-box;
+    }
+    .timeline li:first-child .tl-body::after,
+    .timeline li:last-child .tl-body::after { background: var(--accent); }
+    .tl-name { display: block; font-size: 16px; font-weight: 500; line-height: 1.35; }
+    .tl-note { display: block; margin-top: 3px; font-size: 13px; font-style: italic; color: var(--muted); }
+
     footer {
       text-align: center;
       color: var(--faint);
@@ -572,6 +646,13 @@
       .m-mlad text { font-size: 56px; }
       .m-static text { font-size: 64px; letter-spacing: .08em; }
       .m-top { stroke-width: 6; }
+      .protokol { margin-top: 36px; }
+      .protokol-head h2 { font-size: 34px; }
+      .timeline { padding: 22px 16px 4px; }
+      .timeline li { grid-template-columns: 64px 1fr; column-gap: 16px; }
+      .tl-time { font-size: 22px; padding-bottom: 24px; }
+      .tl-body { padding-left: 22px; padding-bottom: 24px; }
+      .tl-name { font-size: 15px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -580,7 +661,8 @@
 
     @media print {
       .searchbar, .jump, .theme-btn, .results, .empty, .ornament, .tools { display: none !important; }
-      .diet-panel { box-shadow: none; break-inside: avoid; }
+      .diet-panel, .timeline { box-shadow: none; break-inside: avoid; }
+      .protokol { break-inside: avoid; }
       body { background: #fff; color: #000; }
       .card { box-shadow: none; break-inside: avoid; }
       .card[hidden] { display: block !important; }
@@ -634,12 +716,20 @@
       <button class="chip" id="dietBtn" type="button" aria-expanded="false" aria-controls="dietPanel"></button>
     </div>
     <section class="diet-panel" id="dietPanel" hidden aria-label="Posebna ishrana"></section>
+    <section class="protokol" id="protokol" hidden aria-labelledby="protokolTitle">
+      <div class="protokol-head">
+        <p class="eyebrow">Satnica dana</p>
+        <h2 id="protokolTitle">Protokol</h2>
+      </div>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
   </main>
 
   <footer class="wrap" id="footer"></footer>
 
   <script src="data/raspored.js"></script>
   <script src="data/sala.js"></script>
+  <script src="data/protokol.js"></script>
   <script>
   (function () {
     'use strict';
@@ -975,6 +1065,22 @@
       dietOpen = open && dietTotal > 0;
       dietBtn.setAttribute('aria-expanded', String(dietOpen));
       dietPanel.hidden = !dietOpen;
+    }
+
+    // ---------- Protokol ----------
+    var PROTOKOL = window.PROTOKOL || [];
+    if (PROTOKOL.length) {
+      $('timeline').innerHTML = PROTOKOL.map(function (p) {
+        var t = '<time class="tl-time">' + escapeHtml(p.vreme || '') + '</time>';
+        var od = escapeHtml(p.vreme || ''), doo = escapeHtml(p.do || ''), note = '';
+        if (p.okvirno) note = doo ? 'okvirno, između ' + od + ' i ' + doo : 'okvirno';
+        else if (doo) note = 'od ' + od + ' do ' + doo;
+        if (p.napomena) note = escapeHtml(p.napomena);
+        if (note) note = '<span class="tl-note">' + note + '</span>';
+        return '<li>' + t + '<div class="tl-body"><span class="tl-name">' + escapeHtml(p.naziv || '') +
+          '</span>' + note + '</div></li>';
+      }).join('');
+      $('protokol').hidden = false;
     }
 
     var zauzeti = regular.filter(function (t) { return t.guests.length; }).length;
