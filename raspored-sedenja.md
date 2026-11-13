@@ -1,6 +1,6 @@
 # Raspored sedenja
 
-**Ukupno gostiju:** 170 · **Stolova:** 16
+**Ukupno gostiju:** 171 · **Stolova:** 16
 
 *+ [Mladenački sto](#mladenački-sto) (zaseban, 6 osoba, ne ulazi u ukupan broj)*
 
@@ -11,7 +11,7 @@
 | [Sto 1](#sto-1) | 11 |
 | [Sto 2](#sto-2) | 11 |
 | [Sto 3](#sto-3) | 12 |
-| [Sto 5](#sto-5) | 8 |
+| [Sto 5](#sto-5) | 9 |
 | [Sto 6](#sto-6) | 12 |
 | [Sto 7](#sto-7) | 12 |
 | [Sto 8](#sto-8) | 11 |
@@ -24,7 +24,7 @@
 | [Sto 15](#sto-15) | 9 |
 | [Sto 16](#sto-16) | 11 |
 | [Sto 17](#sto-17) | 9 |
-| **Ukupno** | **170** |
+| **Ukupno** | **171** |
 
 ---
 
@@ -101,7 +101,7 @@
 
 ## Sto 5
 
-*8 gostiju*
+*9 gostiju*
 
 | # | Ime i prezime | Napomena |
 |---:|---|---|
@@ -111,8 +111,9 @@
 | 4 | Ivana Vasiljević | vegetarijanac |
 | 5 | Jovana Deljanin | |
 | 6 | Marija Dušić | |
-| 7 | Miljana Vida | |
-| 8 | Gabor Vida | |
+| 7 | Katarina Dušić | |
+| 8 | Miljana Vida | |
+| 9 | Gabor Vida | |
 
 ## Sto 6
 
@@ -181,7 +182,7 @@
 | 3 | Andrea Polinelli | |
 | 4 | Anna Sikorska Polinelli | |
 | 5 | Filip Ljubisavljević | |
-| 6 | Sandra Vidić | |
+| 6 | Sandra Pavlović | |
 | 7 | Minja Stefanović | |
 | 8 | Miloš Popović | |
 | 9 | Danijela Đorović | |

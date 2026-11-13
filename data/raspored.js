@@ -72,6 +72,7 @@ window.RASPORED = {
         { "ime": "Ivana Vasiljević", "napomena": "vegetarijanac" },
         "Jovana Deljanin",
         "Marija Dušić",
+        "Katarina Dušić",
         "Miljana Vida",
         "Gabor Vida"
       ]
@@ -134,7 +135,7 @@ window.RASPORED = {
         "Andrea Polinelli",
         "Anna Sikorska Polinelli",
         "Filip Ljubisavljević",
-        "Sandra Vidić",
+        "Sandra Pavlović",
         "Minja Stefanović",
         "Miloš Popović",
         "Danijela Đorović",
