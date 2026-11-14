@@ -153,10 +153,9 @@ window.RASPORED = {
         "Boris Perić",
         "Milanka Jakovljević",
         "Milan Božović",
-        "Katarina Tošev",
-        "Bojan Tošev",
         "Dragana Lunić",
-        "Aleksandar Lunić"
+        "Aleksandar Lunić",
+        "Dragana Radišić"
       ]
     },
     {
@@ -232,8 +231,7 @@ window.RASPORED = {
         "Maja Marinković",
         "Miloš Marinković",
         "Jelena Bajović",
-        "Cihan Çimen",
-        "Dragana Radišić"
+        "Cihan Çimen"
       ]
     },
     {

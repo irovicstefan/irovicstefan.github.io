@@ -1,6 +1,6 @@
 # Raspored sedenja
 
-**Ukupno gostiju:** 171 · **Stolova:** 16
+**Ukupno gostiju:** 169 · **Stolova:** 16
 
 *+ [Mladenački sto](#mladenački-sto) (zaseban, 6 osoba, ne ulazi u ukupan broj)*
 
@@ -16,15 +16,15 @@
 | [Sto 7](#sto-7) | 12 |
 | [Sto 8](#sto-8) | 11 |
 | [Sto 9](#sto-9) | 10 |
-| [Sto 10](#sto-10) | 12 |
+| [Sto 10](#sto-10) | 11 |
 | [Sto 11](#sto-11) | 12 |
 | [Sto 12](#sto-12) | 10 |
 | [Sto 13](#sto-13) | 11 |
 | [Sto 14](#sto-14) | 9 |
-| [Sto 15](#sto-15) | 9 |
+| [Sto 15](#sto-15) | 8 |
 | [Sto 16](#sto-16) | 11 |
 | [Sto 17](#sto-17) | 9 |
-| **Ukupno** | **171** |
+| **Ukupno** | **169** |
 
 ---
 
@@ -190,7 +190,7 @@
 
 ## Sto 10
 
-*12 gostiju*
+*11 gostiju*
 
 | # | Ime i prezime | Napomena |
 |---:|---|---|
@@ -202,10 +202,9 @@
 | 6 | Boris Perić | |
 | 7 | Milanka Jakovljević | |
 | 8 | Milan Božović | |
-| 9 | Katarina Tošev | |
-| 10 | Bojan Tošev | |
-| 11 | Dragana Lunić | |
-| 12 | Aleksandar Lunić | |
+| 9 | Dragana Lunić | |
+| 10 | Aleksandar Lunić | |
+| 11 | Dragana Radišić | |
 
 ## Sto 11
 
@@ -279,7 +278,7 @@
 
 ## Sto 15
 
-*9 gostiju*
+*8 gostiju*
 
 | # | Ime i prezime | Napomena |
 |---:|---|---|
@@ -292,7 +291,6 @@
 | 6 | Miloš Marinković | |
 | 7 | Jelena Bajović | |
 | 8 | Cihan Çimen | |
-| 9 | Dragana Radišić | |
 
 ## Sto 16
 
